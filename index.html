@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: '아르바나',Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            line-height: 200%;
+            background-color: #999;
+            padding: 30px;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            bottom:0;
+            left:0;
+        }
+        .center[open] { position: relative; }
+        .fit-fill {
+            transition: all 0.3s ease;
+            width: 150px;
+            height: 7px;
+            object-fit: fill;       /* 비율 무시, 컨테이너를 꽉 채움 (늘어남) */
+        }
+        .fit-fill2 {
+            transition: all 0.3s ease;
+            width: 100px;
+            height: 7px;
+            object-fit: fill;       /* 비율 무시, 컨테이너를 꽉 채움 (늘어남) */
+        }
+        .fit-fill3 {
+            transition: all 0.9s ease;
+            width: 1500px;
+            height: 7px;
+            object-fit: fill;       /* 비율 무시, 컨테이너를 꽉 채움 (늘어남) */
+        }
+        .fit-fill4 {
+            transition: all 0.9s ease;
+            width: 300px;
+            height: 7px;
+            object-fit: fill;       /* 비율 무시, 컨테이너를 꽉 채움 (늘어남) */
+        }
+         .fit-fill:hover {
+            height: 100px;
+            animation-name: delay;
+            animation-duration: 8s;
+            animation-delay: -1s;
+            animation-direction: alternate-reverse;
+            @keyframes delay {
+                0% { height: 7px; }
+                100% { height: 100px; }
+            }   
+        }
+        .fit-fill2:hover {
+            height: 150px;
+        }
+        .low-height {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            align-items: flex-end;
+        }
+        .high-height {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            align-items: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br>
+    113 터키인은 트럭 운전석에 앉아 자신의 영역을 바라본다. 여기저기 흩어진 오래된 책들, 레코드, 앨범, 사진들 ... 죽은 영혼들의 장사꾼은 말없이, 담배를 피우고 있다. 가격을 묻는 사람이 오면 그는 손가락을 들어 보인다. 1 마르크, 2 마르크, 3 마르크 ...
+    <br><br>
+    사물은 사람보다 오래 남는다. 앨범은 주인보다 오래 산다. 오래된 코트나, 누군가에게 한때 의미가 있었던 그리고 언젠가 또 다른 누군가에게 의미가 될 어떤 무의미한 물건 속에도 늘 생의 잔여가 숨어 있다. 영혼은 그런 방식으로 옮겨 다닌다.
+    <br>
+    여기에서는 보스니아 난민들이 서로 만난다. 그들은 영혼의 행방을 묻는다. 누가 어디에서 왔는지, 누구 소식을 아는 사람이 있는지, 그 사람은 지금 어디에 있는지 ... 그들은 소식을 나누고, 고향의 도시와 마을별로 모여 선다. 그러다가 난민 방을 조금이나마 집처럼 보이게 해줄 작은 물건 하나를 사 가곤 한다.
+    <br>
+    토요일과 일요일이면, 이 구스타프-마이어 알레에서는 더 이상 존재하지 않는 나라, 보스니아가 공중에 다시 지도를 그린다. 도시들, 마을들, 강과 산맥들이 잠시 형체를 드러낸다. 지도는 짧게 빛을 띠고, 곧 비누방울처럼 사라진다.
+    <br>
+    -<무조건 항복 미술관>, 두브라브카 우그레시치
+    <br><br><br>
+    이곳은 바닥이다…<br>
+                        이곳은 절벽이다…<br>
+                        절벽 위에 점성술사가 있다… <br>
+                        절벽 위에 자신이 점 친 미래 중, 그 어떤 것도 맞닥뜨리지 못한 점성술사가 있다…<Br>
+                        미래를 점 치지 못하는 점성술사는 사다리타기에 모든 운을 걸어 보기로 한다…<br>
+    <br>
+    웹은 언제나 수직이다.<br>
+    수평이 될 수 있을까?<br>
+    이 바닥에 점을 칠 수 있는 재료는 얼마나 무한한가요?<br><br><br><br>
+     <div class="low-height">
+        <div>
+            <img src="1011.jpg" alt="1011" class="fit-fill">
+        </div>
+        <div>
+            <img src="1021.jpg" alt="1021" class="fit-fill">
+        </div>
+        <div>
+            <img src="1031.jpg" alt="1031" class="fit-fill">
+        </div>
+        <div>
+            <img src="1041.jpg" alt="1041" class="fit-fill">
+        </div>
+        <div>
+            <img src="1051.jpg" alt="1051" class="fit-fill">
+        </div>
+        <div>
+            <img src="1061.jpg" alt="1061" class="fit-fill">
+        </div>
+         <div>
+            <img src="1071.jpg" alt="1071" class="fit-fill">
+        </div>
+        <div>
+            <img src="1081.jpg" alt="1081" class="fit-fill">
+        </div>
+        <div>
+            <img src="1091.jpg" alt="1091" class="fit-fill">
+         </div>
+        <div>
+            <img src="1101.jpg" alt="1101" class="fit-fill">
+        </div>   
+    </div>
+    <div class="low-height">
+        <div>
+            <img src="1012.jpg" alt="1012" class="fit-fill">
+        </div>
+        <div>
+            <img src="1022.jpg" alt="1022" class="fit-fill">
+        </div>
+        <div>
+            <img src="1032.jpg" alt="1032" class="fit-fill">
+        </div>
+        <div>
+            <img src="1042.jpg" alt="1042" class="fit-fill">
+        </div>
+        <div>
+            <img src="1052.jpg" alt="1052" class="fit-fill">
+        </div>
+        <div>
+            <img src="1062.jpg" alt="1062" class="fit-fill">
+        </div>
+        <div>
+            <img src="1072.jpg" alt="1072" class="fit-fill">
+        </div> 
+        <div>
+            <img src="1082.jpg" alt="1082" class="fit-fill">
+        </div>
+         <div>
+            <img src="1092.jpg" alt="1092" class="fit-fill">
+        </div>
+        <div>
+            <img src="1102.jpg" alt="1102" class="fit-fill">
+        </div>
+    </div>
+    <div class="low-height">
+        <div>
+            <img src="2011.jpg" alt="2011" class="fit-fill">
+        </div>
+        <div>
+            <img src="2021.jpg" alt="2021" class="fit-fill">
+        </div>
+        <div>
+            <img src="2031.jpg" alt="2031" class="fit-fill">
+        </div>
+        <div>
+            <img src="2041.jpg" alt="2041" class="fit-fill">
+        </div>
+        <div>
+            <img src="2051.jpg" alt="2051" class="fit-fill">
+        </div>
+        <div>
+            <img src="2061.jpg" alt="2061" class="fit-fill">
+        </div>
+        <div>
+            <img src="2071.jpg" alt="2071" class="fit-fill">
+        </div>
+        <div>
+            <img src="2081.jpg" alt="2081" class="fit-fill">
+        </div>
+        <div>
+            <img src="2091.jpg" alt="2091" class="fit-fill">
+        </div>
+        <div>
+            <img src="2101.jpg" alt="2101" class="fit-fill">
+        </div>
+    </div>
+    <div class="low-height">
+            <div>
+                <img src="2012.jpg" alt="2012" class="fit-fill">
+            </div>
+            <div>
+                <img src="2022.jpg" alt="2022" class="fit-fill">
+            </div>
+            <div>
+                <img src="2032.jpg" alt="2032" class="fit-fill">
+            </div>
+            <div>
+                <img src="2042.jpg" alt="2042" class="fit-fill">
+            </div>
+            <div>
+                <img src="2052.jpg" alt="2052" class="fit-fill">
+            </div>
+            <div>
+                <img src="2062.jpg" alt="2062" class="fit-fill">
+            </div>
+            <div>
+                <img src="2072.jpg" alt="2072" class="fit-fill">
+            </div> 
+            <div>
+                <img src="2082.jpg" alt="2082" class="fit-fill">
+            </div>
+            <div>
+                <img src="2092.jpg" alt="2092" class="fit-fill">
+            </div>
+            <div>
+                <img src="2102.jpg" alt="2102" class="fit-fill">
+            </div>
+    </div>
+    <div class="high-height">
+        <div>
+            <img src="3011.jpg" alt="3011" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3021.jpg" alt="3021" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3031.jpg" alt="3031" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3041.jpg" alt="3041" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3051.jpg" alt="3051" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3061.jpg" alt="3061" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3071.jpg" alt="3071" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3081.jpg" alt="3081" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3091.jpg" alt="3091" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3101.jpg" alt="3101" class="fit-fill2">
+        </div>
+    </div>
+    <div class="high-height">
+        <div>
+            <img src="3012.jpg" alt="3012" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3022.jpg" alt="3022" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3032.jpg" alt="3032" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3042.jpg" alt="3042" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3052.jpg" alt="3052" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3062.jpg" alt="3062" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3072.jpg" alt="3072" class="fit-fill2">
+        </div> 
+        <div>
+            <img src="3082.jpg" alt="3082" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3092.jpg" alt="3092" class="fit-fill2">
+        </div>
+        <div>
+            <img src="3102.jpg" alt="3102" class="fit-fill2">
+        </div>
+    </div>
+    <div class="high-height">
+        <div>
+            <img src="4011.jpg" alt="4011" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4021.jpg" alt="4021" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4031.jpg" alt="4031" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4041.jpg" alt="4041" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4051.jpg" alt="4051" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4061.jpg" alt="4061" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4071.jpg" alt="4071" class="fit-fill2">
+        </div> 
+        <div>
+            <img src="4081.jpg" alt="4081" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4091.jpg" alt="4091" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4101.jpg" alt="4101" class="fit-fill2">
+        </div>
+    </div>
+    <div class="high-height">
+        <div>
+            <img src="4012.jpg" alt="4012" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4022.jpg" alt="4022" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4032.jpg" alt="4032" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4042.jpg" alt="4042" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4052.jpg" alt="4052" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4062.jpg" alt="4062" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4072.jpg" alt="4072" class="fit-fill2">
+        </div> 
+        <div>
+            <img src="4082.jpg" alt="4082" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4092.jpg" alt="4092" class="fit-fill2">
+        </div>
+        <div>
+            <img src="4102.jpg" alt="4102" class="fit-fill2">
+        </div>
+    </div>
+    <br><br><br>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" width="1500">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    <div>
+        <img src="옥상전개도.png" alt="옥상전개도" class="fit-fill3">
+    </div>
+    ... ...
+    <br><br>
+    <tbody>
+        <tr>
+            <td>
+                <img src="IMG_8103.jpg" alt="점성술사1" width="300">
+            </td>
+            <td>
+                점성술사는 네모나게 오목한 바닥에 무언가를 담는다.<br>
+                그녀는 틀에 담는다.<br>
+                그녀는 틀에 왁스를 붓고 남은 바닥의 자국을 바라보며 점을 친다.<br> 
+            </td>
+        </tr>
+    </tbody>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
