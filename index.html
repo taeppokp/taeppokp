@@ -117,7 +117,7 @@
         }
         .textbox {
             display: block;
-            width: 330px;
+            width: 350px;
             border: 1px solid #000;
             padding: 20px 70px 10px 20px;
             margin-left: 20px;
@@ -125,11 +125,20 @@
         }
         .textbox2 {
             display: block;
-            width: 330px;
+            width: 350px;
             border: 1px solid #000;
             padding: 20px 70px 10px 20px;
             margin-left: 20px;
             box-shadow: inset 140px 30px 60px #8ec999e1; /* 안쪽 그림자 */
+            min-width: 280px;
+        }
+        @media (max-width: 768px) {
+            .textbox, .textbox2 {
+                width: 100%;
+                min-width: unset;
+                margin-left: 0;
+                padding: 20px 20px 10px 20px;
+            }
         }
         .textbox-date {
             display: block;
