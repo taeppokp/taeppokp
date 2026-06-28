@@ -25,12 +25,18 @@
             font-style: italic;
             font-size: 15px;
         }
-        tr {
-            align-items: flex-start;
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        td:not([width="30"]) {
             background-color: #a5a5a5;
-            margin: 10px;
             box-shadow: inset 160px 60px 50px #8ec999e1; /* 안쪽 그림자 */
         }
+        tr {
+            /* tr에는 box-shadow와 margin이 잘 적용되지 않습니다 */
+        }
+       
         .fit-fill {
             transition: all 0.3s ease;
             width: 150px;
