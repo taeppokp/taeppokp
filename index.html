@@ -163,6 +163,7 @@
             text-align: center;
         }/* 점성술사의 전기, 이곳은 바닥이다 절벽이다 */
         .text2 {
+            min-width: 800px;
             display: flex;
             flex-direction:row;
             align-items:flex-end;
@@ -188,6 +189,7 @@
             background-color: #a5a5a5;
             display: block;
             width: 350px;
+            min-width: 350px;
             border: 1px solid #000;
             padding: 20px 70px 10px 20px;
             margin-left: 20px;
@@ -199,14 +201,14 @@
             background-color: #a5a5a5;
             display: block;
             width: 350px;
+            min-width: 350px;
             border: 1px solid #000;
             padding: 20px 70px 10px 20px;
             margin-left: 20px;
             box-shadow: inset 140px 30px 60px #8ec999e1; /* 안쪽 그림자 */
-            min-width: 280px;
         }/* 일지 전개도 글블럭 */
 
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
             .textbox, .textbox2 {
                 width: 100%;
                 min-width: unset;
