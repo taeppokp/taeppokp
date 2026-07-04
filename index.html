@@ -17,7 +17,9 @@
             margin: 90px 50px 50px 50px;
         }
         .footer {
-            position: sticky;
+            position: fixed;
+            left: 0;
+            right: 0;
             bottom: 0;
             display: flex;
             justify-content: center;
@@ -32,7 +34,6 @@
             box-shadow: inset 140px 30px 40px #8ec999e1; /* 안쪽 그림자 */
             padding-bottom: env(safe-area-inset-bottom);
             z-index: 10;
-            margin-top: 40px;
         }
         @media (max-width: 780px) {
             .footer {
