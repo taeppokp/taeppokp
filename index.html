@@ -18,23 +18,26 @@
         }
         .footer {
             position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 50px;
-            bottom: 20px;
-            width: 1000px;
+            width: 100%;
+            max-width: 100%;
             line-height: 1;
             text-align: center;
             background-color: #a5a5a5;
             opacity: 0.5;
             box-shadow: inset 140px 30px 40px #8ec999e1; /* 안쪽 그림자 */
+            padding-bottom: env(safe-area-inset-bottom);
         }
         @media (max-width: 780px) {
             .footer {
                 font-size: 30px;
-                height:100px;
-                bottom: 100px;
+                height: 60px;
             }
         }
         
