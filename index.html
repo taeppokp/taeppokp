@@ -14,7 +14,7 @@
             letter-spacing: 0.12rem;
             line-height: 200%;
             background-color: #999;
-            margin: 450px 50px 50px 50px;
+            margin: 420px 50px 50px 50px;
             
         }
         .footer {
@@ -242,7 +242,47 @@
             text-align: right;
             margin-bottom: 0.5em;
         }
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            list-style: none;
+            width: 400px;
+            /* padding-left: 0; */
+            margin: 0 0 0 auto;
+        }
+        li {
+            display: block;
+            text-align: left;
+            /* background-color: #f59a76d4; */
+            margin-bottom: 10px;
+            padding-right: 14px;
+            padding-left: 14px;
+            /* position: relative; */
+        }
+        li::before {
+            content: "***...";
+            padding-right: 7px;
+            color: #333;
+        }
+        li::after {
+            content: "...***";
+            color: #333;
+            padding-left: 7px;
+        }
+        a {
+            text-decoration: none;
+            font-style: italic;
+            color: #333;
+        }
+        a:hover {
+            color: #8ec999b0;
+        }
     </style>
+        <ul>
+            <li style="text-align:right;"><a href="https://www.instagram.com/taep_pokp_?utm_source=qr">@taep_pokp_</a></li>
+            <li style="text-align:right;"><a href="https://www.instagram.com/ohne_seelen?utm_source=qr">@ohne_seelen</a></li>
+        </ul>
 </head>
 <body>
     <table>
