@@ -4076,10 +4076,10 @@
                 고운 천에 그린 그림을 삼킨 무엇무엇 가상혈육. 
                 이것은 기억될까요?<Br>
                 <br>
-                <div id="download-log" style="margin-top:12px; text-align:left; font-family:'gothic'; font-size:14px; color:#fff; padding:10px;">
+                <!-- <div id="download-log" style="margin-top:12px; text-align:left; font-family:'gothic'; font-size:14px; color:#fff; padding:10px;">
                     <div id="download-log-empty" style="font-size:14px; color:#555;">아직 저장된 위치가 없습니다.</div>
                     <div id="download-log-list" style="display:grid; gap:10px; margin-top:10px; padding-right:6px;"></div>
-                </div>
+                </div> -->
                 
             </div>
             <div class="startup-modal-controls">
@@ -4101,17 +4101,17 @@
             </div>
         </div>
     </div>
-    <script>
+ <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ✉️ [설정] 본인 이메일 주소를 적어주세요.
+            const MY_EMAIL = 'lnsu825@gmail.com';
+
             const modal = document.getElementById('startup-modal');
             const modalBox = modal.querySelector('.startup-modal-box');
             const modalImage = document.getElementById('startup-image');
             const closeBtn = document.getElementById('startup-close');
             const downloadBtn = document.getElementById('startup-download');
             const clearBtn = document.getElementById('startup-clear');
-            const downloadLogEmpty = document.getElementById('download-log-empty');
-            const downloadLogList = document.getElementById('download-log-list');
-            const DOWNLOAD_STORAGE_KEY = 'savedMarkedImages';
 
             let marks = [];
 
@@ -4138,7 +4138,7 @@
                 }
             });
 
-            // Enable placing markers by clicking the image
+            // 마커 찍기 기능
             modalImage.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const imgRect = modalImage.getBoundingClientRect();
@@ -4162,7 +4162,7 @@
                 marks.push({ percentX, percentY, el });
             });
 
-            // Create a fake cursor image that follows the mouse (works around browser cursor limits)
+            // 마우스 커서 따라다니는 이미지 처리
             const fakeCursor = document.createElement('img');
             fakeCursor.className = 'fake-cursor';
             fakeCursor.src = 'img/placebutton.png';
@@ -4190,94 +4190,26 @@
             modalImage.addEventListener('mouseenter', () => { fakeCursor.style.display = 'block'; });
             modalImage.addEventListener('mouseleave', () => { fakeCursor.style.display = 'none'; });
 
-            function renderSavedDownloads(imageDataUrls) {
-                if (!downloadLogEmpty || !downloadLogList) return;
-                if (!Array.isArray(imageDataUrls) || imageDataUrls.length === 0) {
-                    downloadLogEmpty.textContent = '아직 저장된 위치가 없습니다.';
-                    downloadLogList.innerHTML = '';
-                    return;
-                }
-
-                downloadLogEmpty.textContent = '다른 위치들을 탐색하세요.';
-                downloadLogList.innerHTML = '';
-                imageDataUrls.forEach((dataUrl, index) => {
-                    const item = document.createElement('div');
-                    item.style.display = 'flex';
-                    item.style.flexDirection = 'column';
-                    item.style.gap = '8px';
-                    item.style.padding = '10px';
-                    item.style.background = '#333';
-                    item.style.border = '1px solid #e6e6e6';
-
-                    const label = document.createElement('div');
-                    label.textContent = `${imageDataUrls.length - index}번째 위치`;
-                    label.style.fontSize = '13px';
-                    label.style.color = '#111';
-                    label.style.fontWeight = '700';
-
-                    const image = document.createElement('img');
-                    image.src = dataUrl;
-                    image.alt = `다운로드된 위치 ${imageDataUrls.length - index}`;
-                    image.style.width = '100%';
-                    image.style.maxWidth = '320px';
-                    
-                    
-
-                    item.appendChild(label);
-                    item.appendChild(image);
-                    downloadLogList.appendChild(item);
-                });
-
-                requestAnimationFrame(() => {
-                    const modalContent = modalBox;
-                    if (modalContent) {
-                        modalContent.style.maxHeight = 'none';
-                    }
-                });
-            }
-
-            function restoreSavedDownloads() {
-                if (!window.localStorage) return;
-                try {
-                    const saved = localStorage.getItem(DOWNLOAD_STORAGE_KEY);
-                    if (saved) {
-                        const parsed = JSON.parse(saved);
-                        const arr = Array.isArray(parsed) ? parsed : [];
-                        console.log('Restored saved marked images count:', arr.length);
-                        renderSavedDownloads(arr);
-                    }
-                } catch (err) {
-                    console.warn('로컬 스토리지 복원 실패', err);
-                    renderSavedDownloads([]);
-                }
-            }
-
-            function saveDataUrl(dataUrl) {
-                if (!window.localStorage) return;
-                try {
-                    const raw = localStorage.getItem(DOWNLOAD_STORAGE_KEY) || '[]';
-                    let arr = [];
-                    try { arr = JSON.parse(raw); } catch (e) { arr = Array.isArray(raw) ? raw : []; }
-                    if (!Array.isArray(arr)) arr = [];
-                    const nextList = [dataUrl, ...arr];
-                    localStorage.setItem(DOWNLOAD_STORAGE_KEY, JSON.stringify(nextList));
-                    console.log('Saved marked image, total saved:', nextList.length);
-                    renderSavedDownloads(nextList);
-                } catch (err) {
-                    console.warn('로컬 스토리지 저장 실패', err);
-                }
-            }
-
-            restoreSavedDownloads();
-
+            // 마커 초기화 버튼
             clearBtn.addEventListener('click', () => {
                 marks.forEach(m => { if (m.el && m.el.remove) m.el.remove(); });
                 marks = [];
             });
 
+            // ✉️ 메일 앱 호출 공통 함수
+            function openEmailClient() {
+                alert('위치가 저장되었습니다!\n\n잠시 후 열리는 이메일 작성 창에 방금 다운로드한 위치를 첨부하여 보내주세요. 당신의 위치를 기다립니다.');
+                
+                const subject = encodeURIComponent('[마커 공유] 다운로드한 위치 이미지 전달');
+                const body = encodeURIComponent('안녕하세요!\n\n저의 위치를 보냅니다. 저는 지금 이곳에 있습니다.\n(다운로드된 이미지 파일을 이 메일에 첨부해 주세요.)');
+
+                window.location.href = `mailto:${MY_EMAIL}?subject=${subject}&body=${body}`;
+            }
+
+            // 다운로드 버튼 처리
             downloadBtn.addEventListener('click', () => {
-                if (!modalImage.naturalWidth) return alert('이미지가 아직 준비되지 않았습니다.');
-                if (!modalImage.naturalWidth) return alert('이미지가 아직 준비되지 않았습니다.');
+                if (!modalImage.naturalWidth) return alert('위치가 아직 준비되지 않았습니다.');
+                
                 const naturalW = modalImage.naturalWidth;
                 const naturalH = modalImage.naturalHeight;
                 const canvas = document.createElement('canvas');
@@ -4290,12 +4222,10 @@
                 markImg.src = 'img/placebutton.png';
 
                 function drawMarksAndDownload() {
-                    // Determine displayed image size and marker displayed size, then scale to natural image size
                     const displayedRect = modalImage.getBoundingClientRect();
                     const displayedW = displayedRect.width || naturalW;
                     const displayedH = displayedRect.height || naturalH;
 
-                    // Use the actual on-screen marker element size if available
                     let displayedMarkW = 56, displayedMarkH = 56;
                     if (marks.length && marks[0].el) {
                         const el = marks[0].el;
@@ -4321,7 +4251,10 @@
                     document.body.appendChild(a);
                     a.click();
                     a.remove();
-                    saveDataUrl(dataUrl);
+
+                    // ❌ 기존 saveDataUrl(dataUrl) 제거됨
+                    // ➕ 메일 작성 앱 열기 실행
+                    openEmailClient();
                 }
 
                 if (markImg.complete) {
@@ -4329,7 +4262,6 @@
                 } else {
                     markImg.onload = drawMarksAndDownload;
                     markImg.onerror = () => {
-                        // fallback to drawing simple circles if marker image fails
                         const radius = Math.max(10, naturalW * 0.02);
                         const stroke = Math.max(3, naturalW * 0.008);
                         marks.forEach(m => {
@@ -4350,7 +4282,10 @@
                         document.body.appendChild(a);
                         a.click();
                         a.remove();
-                        saveDataUrl(dataUrl);
+
+                        // ❌ 기존 saveDataUrl(dataUrl) 제거됨
+                        // ➕ 메일 작성 앱 열기 실행
+                        openEmailClient();
                     };
                 }
             });
