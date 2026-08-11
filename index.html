@@ -4066,7 +4066,7 @@
                 <div style="margin-top:8px; font-family: 'gothic';font-size:15px; text-align:left; line-height:normal;color:#fff;">
                     1. 이미지 위 당신의 위치를 클릭하여 표시해주세요. 
                     <Br>
-                    2. 완료 후 "다운로드"를 누르면 당신의 위치가 포함된 이미지가 내려받아지고 이곳에 기록됩니다.
+                    2. 완료 후 "다운로드"를 누르면 당신의 위치가 포함된 이미지가 내려받아집니다.
                 </div>
                 
                 <br>날아가는 해결과 쌓이는 문제, 달아나는 문제와 쫓아오는 해결. 어떻게 바꾸어도 같은 말처럼 들립니다. 어떤 것은 독촉하고 어떤 것은 당근을 눈앞에 휘두릅니다. 당근이 돌칼이 되고 독촉이 포옹이 됩니다. 
@@ -4196,23 +4196,17 @@
                 marks = [];
             });
 
-            // ✉️ 메일 앱 호출 공통 함수
+            // ✉️ 메일 앱 호출 공통 함수 (iOS 완벽 대응)
             function openEmailClient() {
-                
                 const subject = encodeURIComponent('[마커 공유] 다운로드한 위치 이미지 전달');
                 const body = encodeURIComponent('안녕하세요!\n\n저의 위치를 보냅니다. 저는 지금 이곳에 있습니다.\n(다운로드된 이미지 파일을 이 메일에 첨부해 주세요.)');
-
-                // 1. Alert 창이 떠 있는 동안 브라우저가 이미지 다운로드를 완료합니다.
-                alert('위치가 저장되었습니다!\n\n잠시 후 열리는 이메일 작성 창에 방금 다운로드한 위치를 첨부하여 보내주세요. 당신의 위치를 기다립니다.');
-
-                // 2. 유저가 확인을 누르면 즉시 mailto 실행 (팝업 블록 위험 없음)
-                const mailLink = document.createElement('a');
-                mailLink.href = `mailto:${MY_EMAIL}?subject=${subject}&body=${body}`;
-                
-                document.body.appendChild(mailLink);
-                mailLink.click();
-                mailLink.remove(); // 실행 후 깔끔하게 제거
-        }
+                const mailtoUrl = `mailto:${MY_EMAIL}?subject=${subject}&body=${body}`;
+            
+                // 이미지 다운로드가 완료되고 브라우저 스레드가 정리될 수 있도록 500ms 지연 후 메일 앱 전환
+                setTimeout(() => {
+                    window.location.href = mailtoUrl;
+                }, 500);
+            }
             
 
             // 다운로드 버튼 처리
