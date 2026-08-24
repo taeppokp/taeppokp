@@ -288,7 +288,7 @@
             align-items: flex-start;
             background: rgba(0,0,0,0.15);
             z-index: 9999;
-            padding-left: 330px;
+            padding-left: 400px;
             padding-top: 400px;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
             overflow-y: auto;
@@ -396,9 +396,13 @@
             font-size: 17px;
             font-weight:900;
             text-align: center;
-            letter-spacing: 0.17rem;
+            letter-spacing: 0.12rem;
             line-height: 200%;
             background: #e6e6e6;
+        }
+
+        .startup-modal-caption a {
+            font-weight:200;
         }
 
         .startup-marker {
@@ -4090,9 +4094,6 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // ✉️ [설정] 본인 이메일 주소를 적어주세요.
-            const MY_EMAIL = 'lnsu825@gmail.com';
-
             const modal = document.getElementById('startup-modal');
             const modalBox = modal.querySelector('.startup-modal-box');
             const modalImage = document.getElementById('startup-image');
@@ -4182,24 +4183,6 @@
                 marks.forEach(m => { if (m.el && m.el.remove) m.el.remove(); });
                 marks = [];
             });
-
-            // ✉️ 메일 앱 호출 공통 함수
-            function openEmailClient() {
-                
-                const subject = encodeURIComponent('[마커 공유] 다운로드한 위치 이미지 전달');
-                const body = encodeURIComponent('안녕하세요!\n\n저의 위치를 보냅니다. 저는 지금 이곳에 있습니다.\n(다운로드된 이미지 파일을 이 메일에 첨부해 주세요.)');
-
-                // 1. Alert 창이 떠 있는 동안 브라우저가 이미지 다운로드를 완료합니다.
-                alert('위치가 저장되었습니다!\n\n잠시 후 열리는 이메일 작성 창에 방금 다운로드한 위치를 첨부하여 보내주세요. 당신의 위치를 기다립니다.');
-
-                // 2. 유저가 확인을 누르면 즉시 mailto 실행 (팝업 블록 위험 없음)
-                const mailLink = document.createElement('a');
-                mailLink.href = `mailto:${MY_EMAIL}?subject=${subject}&body=${body}`;
-                
-                document.body.appendChild(mailLink);
-                mailLink.click();
-                mailLink.remove(); // 실행 후 깔끔하게 제거
-        }
             // 다운로드 버튼 처리
             downloadBtn.addEventListener('click', () => {
                 if (!modalImage.naturalWidth) return alert('위치가 아직 준비되지 않았습니다.');
@@ -4245,10 +4228,6 @@
                     document.body.appendChild(a);
                     a.click();
                     a.remove();
-
-                    // ❌ 기존 saveDataUrl(dataUrl) 제거됨
-                    // ➕ 메일 작성 앱 열기 실행
-                    openEmailClient();
                 }
 
                 if (markImg.complete) {
@@ -4276,10 +4255,6 @@
                         document.body.appendChild(a);
                         a.click();
                         a.remove();
-
-                        // ❌ 기존 saveDataUrl(dataUrl) 제거됨
-                        // ➕ 메일 작성 앱 열기 실행
-                        openEmailClient();
                     };
                 }
             });
