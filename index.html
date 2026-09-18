@@ -4144,6 +4144,51 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const hoverTargets = document.querySelectorAll('.fit-fill, .fit-fill2');
+
+            const syncActiveState = () => {
+                hoverTargets.forEach((target) => {
+                    const pinned = target.dataset.pinned === 'true';
+                    const hovered = target.dataset.hovered === 'true';
+                    target.classList.toggle('active', pinned || hovered);
+                });
+            };
+
+            hoverTargets.forEach((el) => {
+                el.addEventListener('mouseenter', () => {
+                    el.dataset.hovered = 'true';
+                    syncActiveState();
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    if (el.dataset.pinned !== 'true') {
+                        el.dataset.hovered = 'false';
+                        syncActiveState();
+                    }
+                });
+
+                el.addEventListener('focus', () => {
+                    el.dataset.hovered = 'true';
+                    syncActiveState();
+                });
+
+                el.addEventListener('blur', () => {
+                    if (el.dataset.pinned !== 'true') {
+                        el.dataset.hovered = 'false';
+                        syncActiveState();
+                    }
+                });
+
+                el.addEventListener('click', () => {
+                    const willPin = el.dataset.pinned !== 'true';
+                    hoverTargets.forEach((target) => {
+                        target.dataset.pinned = (target === el && willPin) ? 'true' : 'false';
+                        target.dataset.hovered = (target === el && willPin) ? 'true' : 'false';
+                    });
+                    syncActiveState();
+                });
+            });
+        
             const modal = document.getElementById('startup-modal');
             const modalBox = modal.querySelector('.startup-modal-box');
             const modalImage = document.getElementById('startup-image');
