@@ -290,7 +290,8 @@
             z-index: 1000;
             padding: 24px;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow: visible;
+            overflow-y: hidden;
+            overflow-x: hidden;
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
         }
@@ -302,7 +303,8 @@
             z-index: 1100;
             padding: 24px;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow: visible;
+            overflow-y: auto;
+            overflow-x: hidden;
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
         }
@@ -312,9 +314,13 @@
         .startup-modal.open,
         #self-modal.open {
             display: flex;
+            align-items: flex-start;
+            justify-content: center;
         }
         #startup-modal.open {
             display: flex;
+            align-items: flex-start;
+            justify-content: center;
         }
         #self-image {
             display: flex;
@@ -369,8 +375,8 @@
             background: #e6e6e6;
             word-break: keep-all;
             overflow-wrap: break-word;
-            overflow-x: visible;
-            overflow-y: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
             cursor: grab;
             scroll-snap-align: center;
             user-select: none;
@@ -389,10 +395,21 @@
             word-break: keep-all;
             overflow-wrap: break-word;
             overflow-x: visible;
-            overflow-y: auto;
+            overflow-y: visible;
             cursor: grab;
             scroll-snap-align: center;
             user-select: none;
+        }
+        #startup-modal-box,
+        #self-modal-box,
+        .startup-modal-caption,
+        .startup-modal-caption *,
+        #startup-modal-box * {
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal;
         }
         .startup-modal-shell.is-dragging,
         .self-modal-shell.is-dragging,
@@ -452,6 +469,20 @@
         }
         .startup-modal-controls .startup-modal-button {
             pointer-events: auto;
+        }
+        .startup-download-tip {
+            display: none;
+            margin-top: 12px;
+            padding: 0 4px;
+            font-family: 'gothic';
+            font-size: 11px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #4f5f52;
+            text-align: center;
+        }
+        .startup-download-tip.visible {
+            display: block;
         }
         .startup-modal-button {
             position: relative;
@@ -545,41 +576,63 @@
         .no-select { user-select: none; }
 
         @media (max-width: 800px) {
-            .startup-modal-shell,
+            .startup-modal-shell {
+                left: 50%;
+                top: 64%;
+                transform: translate(-50%, -50%);
+            }
             .self-modal-shell {
-                left: 0%;
-                transform: translate(0, -50%);
+                left: 50%;
+                top: 62%;
+                transform: translate(-50%, -50%);
             }
             #startup-modal, #self-modal {
                 padding: 12px;
                 overflow-x: hidden;
+                overflow-y: auto;
             }
-            #startup-modal-box, #self-modal-box {
-                width: 420px;
-                min-width: 420px;
-                max-width: 420px;
-                padding: 18px 16px 22px;
+            #startup-modal-box {
+                width: min(300px, calc(100vw - 24px));
+                min-width: 0;
+                max-width: min(300px, calc(100vw - 24px));
+                min-height: 620px;
+                max-height: calc(100vh - 70px);
+                padding: 16px 12px 20px;
+                overflow-x: hidden;
+                font-size: 11.5px;
+                line-height: 1.6;
+            }
+            #self-modal-box {
+                width: min(300px, calc(100vw - 24px));
+                min-width: 0;
+                max-width: min(300px, calc(100vw - 24px));
+                padding: 16px 12px 20px;
+                overflow-x: hidden;
+                font-size: 11.5px;
+                line-height: 1.6;
             }
             #startup-image,
             .startup-modal-image {
-                width: 280px;
-                min-width: 280px;
-                max-width: 280px;
+                width: min(180px, calc(100vw - 96px));
+                min-width: 0;
+                max-width: min(180px, calc(100vw - 96px));
                 height: auto;
             }
             #self-image {
-                width: 260px;
-                min-width: 260px;
-                max-width: 260px;
+                width: min(170px, calc(100vw - 110px));
+                min-width: 0;
+                max-width: min(170px, calc(100vw - 110px));
                 height: auto;
             }
             .startup-modal-caption {
-                width: 300px;
-                min-width: 300px;
-                max-width: 300px;
-                font-size: 14px;
-                letter-spacing: 0.06rem;
-                line-height: 1.7;
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                font-size: 11.5px;
+                letter-spacing: 0.02rem;
+                line-height: 1.6;
+                word-break: break-word;
+                overflow-wrap: anywhere;
             }
         }
 
@@ -4436,6 +4489,9 @@
                     </button>
                 </div>
             </div>
+            <div id="startup-download-tip" class="startup-download-tip">
+                모바일에서는 브라우저에 따라 자동 저장이 제한될 수 있어요. 이미지가 열리면 저장을 선택해 주세요.
+            </div>
         </div>
     </div>
     <!-- 팝업창2 자기소개-->
@@ -4547,6 +4603,12 @@
             const closeBtn = document.getElementById('startup-close');
             const downloadBtn = document.getElementById('startup-download');
             const clearBtn = document.getElementById('startup-clear');
+            const downloadTip = document.getElementById('startup-download-tip');
+
+            function showDownloadTip() {
+                if (!downloadTip) return;
+                downloadTip.classList.add('visible');
+            }
 
             function enableHorizontalDrag(shell) {
                 if (!shell) return;
@@ -4560,19 +4622,26 @@
 
                 const clamp = (value) => {
                     const mobile = window.innerWidth <= 800;
-                    const minValue = mobile ? -220 : -240;
-                    const maxValue = mobile ? 80 : 240;
+                    if (mobile) {
+                        const viewportWidth = window.innerWidth;
+                        const shellWidth = shell.offsetWidth || 320;
+                        const safeWidth = Math.min(shellWidth, Math.max(180, viewportWidth - 18));
+                        const dragLimit = Math.max(110, (viewportWidth - safeWidth) / 2 + 100);
+                        return Math.max(-dragLimit, Math.min(dragLimit, value));
+                    }
+                    const minValue = -240;
+                    const maxValue = 240;
                     return Math.max(minValue, Math.min(maxValue, value));
                 };
                 const apply = (value) => {
                     const mobile = window.innerWidth <= 800;
-                    const baseX = mobile ? '0%' : (shell.dataset.baseX || '50%');
-                    const baseY = shell.dataset.baseY || '50%';
+                    const baseX = mobile ? '50%' : (shell.dataset.baseX || '50%');
+                    const baseY = mobile ? (shell.id === 'startup-modal-shell' ? '64%' : '62%') : (shell.dataset.baseY || '50%');
                     currentTranslate = clamp(value);
                     shell.dataset.translateX = String(currentTranslate);
                     shell.style.left = `calc(${baseX} + ${currentTranslate}px)`;
                     shell.style.top = baseY;
-                    shell.style.transform = mobile ? 'translate(0, -50%)' : 'translate(20%, -50%)';
+                    shell.style.transform = mobile ? 'translate(-50%, -50%)' : 'translate(20%, -50%)';
                 };
 
                 const finishDrag = () => {
@@ -4696,8 +4765,13 @@
 
             // 다운로드 버튼 처리
             downloadBtn.addEventListener('click', () => {
-                if (!modalImage.naturalWidth) return alert('위치가 아직 준비되지 않았습니다.');
-                
+                if (!modalImage.naturalWidth) {
+                    showDownloadTip();
+                    return;
+                }
+
+                showDownloadTip();
+
                 const naturalW = modalImage.naturalWidth;
                 const naturalH = modalImage.naturalHeight;
                 const canvas = document.createElement('canvas');
@@ -4708,6 +4782,45 @@
 
                 const markImg = new Image();
                 markImg.src = 'img/placebutton.png';
+
+                function triggerDownloadFromBlob(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'img_0007_marked.png';
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+
+                    showDownloadTip();
+
+                    const tryDownload = () => {
+                        try {
+                            a.click();
+                        } catch (error) {
+                            window.open(url, '_blank');
+                        }
+                    };
+
+                    tryDownload();
+                    setTimeout(() => {
+                        URL.revokeObjectURL(url);
+                        a.remove();
+                    }, 1200);
+                }
+
+                function triggerDownloadFromDataUrl(dataUrl) {
+                    const a = document.createElement('a');
+                    a.href = dataUrl;
+                    a.download = 'img_0007_marked.png';
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    try {
+                        a.click();
+                    } catch (error) {
+                        window.open(dataUrl, '_blank');
+                    }
+                    setTimeout(() => a.remove(), 1200);
+                }
 
                 function drawMarksAndDownload() {
                     const displayedRect = modalImage.getBoundingClientRect();
@@ -4732,14 +4845,17 @@
                         ctx.drawImage(markImg, Math.round(cx - markW / 2), Math.round(cy - markH / 2), markW, markH);
                     });
 
-                    const dataUrl = canvas.toDataURL('image/png');
-                    const a = document.createElement('a');
-                    a.href = dataUrl;
-                    a.download = 'img_0007_marked.png';
-                    document.body.appendChild(a);
-                    a.click();
-                    a.remove();
-
+                    if (canvas.toBlob) {
+                        canvas.toBlob((blob) => {
+                            if (blob) {
+                                triggerDownloadFromBlob(blob);
+                            } else {
+                                triggerDownloadFromDataUrl(canvas.toDataURL('image/png'));
+                            }
+                        }, 'image/png');
+                    } else {
+                        triggerDownloadFromDataUrl(canvas.toDataURL('image/png'));
+                    }
                 }
 
                 if (markImg.complete) {
@@ -4760,13 +4876,18 @@
                             ctx.strokeStyle = '#fff';
                             ctx.stroke();
                         });
-                        const dataUrl = canvas.toDataURL('image/png');
-                        const a = document.createElement('a');
-                        a.href = dataUrl;
-                        a.download = 'img_0007_marked.png';
-                        document.body.appendChild(a);
-                        a.click();
-                        a.remove();
+
+                        if (canvas.toBlob) {
+                            canvas.toBlob((blob) => {
+                                if (blob) {
+                                    triggerDownloadFromBlob(blob);
+                                } else {
+                                    triggerDownloadFromDataUrl(canvas.toDataURL('image/png'));
+                                }
+                            }, 'image/png');
+                        } else {
+                            triggerDownloadFromDataUrl(canvas.toDataURL('image/png'));
+                        }
                     };
                 }
             });
