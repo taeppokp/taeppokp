@@ -91,6 +91,7 @@
             color: #7a7a7a;
             text-align: center;
         }/* 점성술사의 전기, 이곳은 바닥이다 절벽이다 */
+
         .fish[width="800"] {
             flex: 0 0 800px;
             max-width: 800px;
@@ -281,36 +282,28 @@
             color: #8ec999b0;
         }
 
-        .startup-modal {
+        #startup-modal {
             position: fixed;
             inset: 0;
             display: none;
-            justify-content: center;
-            align-items: center;
             background: rgba(0,0,0,0.15);
             z-index: 1000;
-            padding: 24px 24px 24px 350px;
+            padding: 24px;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow-y: auto;
-            overflow-x: auto;
-            touch-action: pan-x;
-            scroll-snap-type: x proximity;
+            overflow: visible;
+            touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
         }
         #self-modal {
             position: fixed;
             inset: 0;
             display: none;
-            justify-content: center;
-            align-items: center;
             background: rgba(0,0,0,0.15);
             z-index: 1100;
             padding: 24px;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow-y: auto;
-            overflow-x: auto;
-            touch-action: pan-x;
-            scroll-snap-type: x proximity;
+            overflow: visible;
+            touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
         }
         #open-self-modal {
@@ -332,44 +325,44 @@
             object-fit: contain;
             background: transparent;
         }
-        .self-close {
-            position: absolute;
-            top: 12px;
-            right: 12px;
         
+        .startup-modal-shell {
+            position: absolute;
+            left: 18%;
+            top: 70%;
+            transform: translate(20%, -50%);
+            overflow: visible;
+            pointer-events: auto;
+            transition: left 0.22s cubic-bezier(0.22, 1, 0.36, 1), top 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: left, top;
+            touch-action: none;
+            user-select: none;
+            cursor: grab;
         }
-        #self-close {
-            position: relative;
-            padding: 0;
-            min-width: 85px;
-            min-height: 50px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: right;
-            box-sizing: border-box;
-            padding: 10px 5px 10px 16px;
-            font-family: 'gothic';
-            font-weight: 500;
-            font-size: 16px;
-            background: #e6e6e6;
-            border: 2px solid #8ec999b0;
-            border-radius: 0 12px 12px 0;
-            cursor: none;
-            transform: translateX(0);
+        .self-modal-shell {
+            position: absolute;
+            left: 12%;
+            top: 50%;
+            transform: translate(10%, -50%);
+            overflow: visible;
+            pointer-events: auto;
+            transition: left 0.22s cubic-bezier(0.22, 1, 0.36, 1), top 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: left, top;
+            touch-action: none;
+            user-select: none;
+            cursor: grab;
         }
-        .startup-modal.open {
-            display: flex;
+        .startup-modal-shell > *,
+        .self-modal-shell > * {
+            pointer-events: auto;
         }
-        #startup-modal.open {
-            display: block;
-        }
-        .startup-modal-box {
+        #startup-modal-box {
             position: relative;
             width: 600px;
             max-width: 600px;
             min-width: 600px;
             min-height: 1100px;
-            max-height: 1100px;
+            max-height: calc(100vh - 80px);
             padding: 60px 90px 24px 24px;
             box-sizing: border-box;
             border: 2px solid #8ec999b0;
@@ -377,9 +370,10 @@
             word-break: keep-all;
             overflow-wrap: break-word;
             overflow-x: visible;
-            cursor: none;
+            overflow-y: auto;
+            cursor: grab;
             scroll-snap-align: center;
-            
+            user-select: none;
         }
         #self-modal-box {
             position: relative;
@@ -387,8 +381,7 @@
             width: 600px;
             min-width: 600px;
             min-height: 800px;
-            max-height: 800px;
-            margin:auto;
+            max-height: calc(100vh - 80px);
             padding: 20px 20px 40px 20px;
             box-sizing: border-box;
             border: 2px solid #8ec999b0;
@@ -396,21 +389,43 @@
             word-break: keep-all;
             overflow-wrap: break-word;
             overflow-x: visible;
-            cursor: none;
+            overflow-y: auto;
+            cursor: grab;
             scroll-snap-align: center;
+            user-select: none;
+        }
+        .startup-modal-shell.is-dragging,
+        .self-modal-shell.is-dragging,
+        #startup-modal-box.is-dragging,
+        #self-modal-box.is-dragging {
+            cursor: grabbing;
+        }
+        #startup-modal-box::-webkit-scrollbar,
+        #self-modal-box::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            display: none;
         }
         .startup-modal-box .startup-modal-controls {
-            overflow-y: auto;
-            overflow-x: hidden;
+            overflow: visible;
         }
         .startup-modal-image {
             display: block;
-            width: 100%;
-            height: auto;
-            max-height: none;
+            width: 400px;
+            min-width: 0;
+            max-width: 100%;
+            height: 300px;
             object-fit: contain;
             background: transparent;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
+        }
+        #startup-image {
+            display: block;
+            width: 400px;
+            min-width: 0;
+            max-width: 100%;
+            height: 300px;
+            object-fit: contain;
         }
         .fake-cursor {
             position: fixed;
@@ -425,15 +440,15 @@
         }
         .startup-modal-controls {
             position: absolute;
-            top: 12px;
+            top: 24px;
             right: -80px;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            gap: 20px;
+            align-items: center;
+            gap: 16px;
             z-index: 99999;
             pointer-events: none;
-            transform: translateX(0);
+            transform: none;
         }
         .startup-modal-controls .startup-modal-button {
             pointer-events: auto;
@@ -441,8 +456,8 @@
         .startup-modal-button {
             position: relative;
             padding: 0;
-            min-width: 96px;
-            min-height: 42px;
+            min-width: 80px;
+            min-height: 28px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -454,20 +469,43 @@
             cursor: none;
             transform: translateX(0);
         }
+        .self-close {
+            position: absolute;
+        }
+        #self-close {
+            position: relative;
+            top: 0;
+            right: 0;
+            min-width: 96px;
+            min-height: 46px;
+            display: inline-flex;
+            justify-content: right;
+            box-sizing: border-box;
+            padding: 10px 5px 10px 16px;
+            font-family: 'gothic';
+            font-weight: 500;
+            font-size: 16px;
+            background: #e6e6e6;
+            border: 2px solid #8ec999b0;
+            border-radius: 0 12px 12px 0;
+            cursor: none;
+            transform: translateX(0);
+        }
         .startup-modal-button > button {
             all: unset;
             display: inline-flex;
-            align-items: center;
+            /* align-items: center; */
             justify-content: right;
-            width: 100%;
-            height: 100%;
+            width: 80px;
+            height: 28px;
             padding: 10px 5px 10px 16px;
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
             border-radius: 0 12px 12px 0;
             border: 2px solid #8ec999b0;
             font: inherit;
             color: inherit;
             cursor: none;
+            margin-right: -2px;
         }
         #startup-close {
             background: #e6e6e6;
@@ -505,6 +543,45 @@
         }
 
         .no-select { user-select: none; }
+
+        @media (max-width: 800px) {
+            .startup-modal-shell,
+            .self-modal-shell {
+                left: 0%;
+                transform: translate(0, -50%);
+            }
+            #startup-modal, #self-modal {
+                padding: 12px;
+                overflow-x: hidden;
+            }
+            #startup-modal-box, #self-modal-box {
+                width: 420px;
+                min-width: 420px;
+                max-width: 420px;
+                padding: 18px 16px 22px;
+            }
+            #startup-image,
+            .startup-modal-image {
+                width: 280px;
+                min-width: 280px;
+                max-width: 280px;
+                height: auto;
+            }
+            #self-image {
+                width: 260px;
+                min-width: 260px;
+                max-width: 260px;
+                height: auto;
+            }
+            .startup-modal-caption {
+                width: 300px;
+                min-width: 300px;
+                max-width: 300px;
+                font-size: 14px;
+                letter-spacing: 0.06rem;
+                line-height: 1.7;
+            }
+        }
 
     </style>
      <ul id="instagram-links">
@@ -4315,28 +4392,32 @@
         </tbody>
     </table>
     <!-- 팝업창1 좌표-->
-    <div id="startup-modal" class="startup-modal" aria-hidden="true">
-        <div class="startup-modal-box">
-            <img id="startup-image" class="startup-modal-image" src="img/IMG_0007.png" alt="Startup Popup Image">
-            <div id="startup-caption" class="startup-modal-caption">
-                <strong>당신의 위치가 궁금합니다.</strong><br>
-                
-                <br>
-                <div style="margin-top:8px; font-family: 'gothic';font-size:15px; text-align:left; line-height: 1.5em;color:#8ec999b0;">
-                    1. 이미지 위 당신의 위치를 클릭하여 표시해주세요. 
-                    <Br>
-                    2. 표시했다면 "다운로드"를 누르세요. 당신의 위치가 포함된 이미지가 내려받아집니다.
-                   <br>
-                    3 원하신다면 저의 이메일로 보내주시겠어요? 당신의 위치를 기다립니다. <a href="mailto:lnsu825@gmail.com" style="font: weight 100;">lnsu825@gmail.com</a>
+    <div id="startup-modal" aria-hidden="true">
+        <div id="startup-modal-shell" class="startup-modal-shell" data-base-x="15%" data-base-y="70%">
+            <div id="startup-modal-box">
+                <div>
+                    <img id="startup-image" class="startup-modal-image" src="img/IMG_0007.png" alt="Startup Popup Image">
                 </div>
-                <Br><Br>
-                <br>날아가는 해결과 쌓이는 문제, 달아나는 문제와 쫓아오는 해결. 어떻게 바꾸어도 같은 말처럼 들립니다. 어떤 것은 독촉하고 어떤 것은 당근을 눈앞에 휘두릅니다. 당근이 돌칼이 되고 독촉이 포옹이 됩니다. 
-                <Br>
-                3년 전 그린 회화 한 점이 떠오릅니다. 
-                <Br>
-                고운 천에 그린 그림을 삼킨 무엇무엇 가상혈육. 
-                이것은 기억될까요?<Br>
-                <br>
+                <div id="startup-caption" class="startup-modal-caption">
+                    <strong>당신의 위치가 궁금합니다.</strong><br>
+                    
+                    <br>
+                    <div style="margin-top:8px; font-family: 'gothic';font-size:15px; text-align:left; line-height: 1.5em;color:#8ec999b0;">
+                        1. 이미지 위 당신의 위치를 클릭하여 표시해주세요. 
+                        <Br>
+                        2. 표시했다면 "다운로드"를 누르세요. 당신의 위치가 포함된 이미지가 내려받아집니다.
+                       <br>
+                        3 원하신다면 저의 이메일로 보내주시겠어요? 당신의 위치를 기다립니다. <a href="mailto:lnsu825@gmail.com" style="font: weight 100;">lnsu825@gmail.com</a>
+                    </div>
+                    <Br><Br>
+                    <br>날아가는 해결과 쌓이는 문제, 달아나는 문제와 쫓아오는 해결. 어떻게 바꾸어도 같은 말처럼 들립니다. 어떤 것은 독촉하고 어떤 것은 당근을 눈앞에 휘두릅니다. 당근이 돌칼이 되고 독촉이 포옹이 됩니다. 
+                    <Br>
+                    3년 전 그린 회화 한 점이 떠오릅니다. 
+                    <Br>
+                    고운 천에 그린 그림을 삼킨 무엇무엇 가상혈육. 
+                    이것은 기억될까요?<Br>
+                    <br>
+                </div>
             </div>
             <div class="startup-modal-controls">
                 <div class="startup-modal-button">
@@ -4359,19 +4440,21 @@
     </div>
     <!-- 팝업창2 자기소개-->
      <div id="self-modal" class="startup-modal" aria-hidden="true">
-        <div id="self-modal-box">
-            <img id="self-image" src="img/self_front.jpg" alt="self-front">
-            <div style="font-size:20px;font-weight:900;">
-                <Br>
-                『자기소개 Self-introduction』이 2026년 9월 7일 발행되었습니다.
-             </div>
-             <div style="font-size:17px; margin-top:20px;margin-right:20px; line-height: 1.5em;">
-                『자기소개 Self-introduction』는 단편소설 <strong>「자기소개」</strong>와 만화 <strong>「매미 제비」</strong>로 구성된 단행본입니다. 다른 형식을 띠는 두 단편은 한 여성에 대한 시선을 '자기소개'라는 사회적・언어적 표현 방식과 비언어적 지면으로 교차시킵니다. <strong>「매미 제비」</strong>는 다른 삶과 숨쉬기의 양상을 띠는 존재들을 기이하게 연쇄되는 시선으로 말 없이 마주합니. 책의 뒷부분에는 동명의 작품 <매미 제비>를 그릴 무렵의 작가노트 일부와 작가의 후기가 수록되어 있습니다.
-                <br>
-                <br>
-                더 자세한 정보와 소식은 또다른 창에서 확인해주세요.
-                <Br>
-                <a href="https://www.instagram.com/p/DdTbeyFk7HM/?img_index=1" target="_blank" style="font: weight 100;"> 『자기소개』 보러가기</a>
+        <div id="self-modal-shell" class="self-modal-shell" data-base-x="10%" data-base-y="50%">
+            <div id="self-modal-box">
+                <img id="self-image" src="img/self_front.jpg" alt="self-front">
+                <div style="font-size:20px;font-weight:900;">
+                    <Br>
+                    『자기소개 Self-introduction』이 2026년 9월 7일 발행되었습니다.
+                 </div>
+                 <div style="font-size:17px; margin-top:20px;margin-right:20px; line-height: 1.5em;">
+                    『자기소개 Self-introduction』는 단편소설 <strong>「자기소개」</strong>와 만화 <strong>「매미 제비」</strong>로 구성된 단행본입니다. 다른 형식을 띠는 두 단편은 한 여성에 대한 시선을 '자기소개'라는 사회적・언어적 표현 방식과 비언어적 지면으로 교차시킵니다. <strong>「매미 제비」</strong>는 다른 삶과 숨쉬기의 양상을 띠는 존재들을 기이하게 연쇄되는 시선으로 말 없이 마주합니. 책의 뒷부분에는 동명의 작품 <매미 제비>를 그릴 무렵의 작가노트 일부와 작가의 후기가 수록되어 있습니다.
+                    <br>
+                    <br>
+                    더 자세한 정보와 소식은 또다른 창에서 확인해주세요.
+                    <Br>
+                    <a href="https://www.instagram.com/p/DdTbeyFk7HM/?img_index=1" target="_blank" style="font: weight 100;"> 『자기소개』 보러가기</a>
+                </div>
             </div>
             <div class="startup-modal-controls">
                 <button id="self-close" type="button">닫기</button>
@@ -4457,11 +4540,83 @@
             });
 
             const modal = document.getElementById('startup-modal');
-            const modalBox = modal.querySelector('.startup-modal-box');
+            const modalShell = document.getElementById('startup-modal-shell');
+            const modalBox = document.getElementById('startup-modal-box');
+            const selfShell = document.getElementById('self-modal-shell');
             const modalImage = document.getElementById('startup-image');
             const closeBtn = document.getElementById('startup-close');
             const downloadBtn = document.getElementById('startup-download');
             const clearBtn = document.getElementById('startup-clear');
+
+            function enableHorizontalDrag(shell) {
+                if (!shell) return;
+
+                let dragging = false;
+                let startX = 0;
+                let startTranslate = 0;
+                let lastClientX = 0;
+                let velocityX = 0;
+                let currentTranslate = Number(shell.dataset.translateX || 0);
+
+                const clamp = (value) => {
+                    const mobile = window.innerWidth <= 800;
+                    const minValue = mobile ? -220 : -240;
+                    const maxValue = mobile ? 80 : 240;
+                    return Math.max(minValue, Math.min(maxValue, value));
+                };
+                const apply = (value) => {
+                    const mobile = window.innerWidth <= 800;
+                    const baseX = mobile ? '0%' : (shell.dataset.baseX || '50%');
+                    const baseY = shell.dataset.baseY || '50%';
+                    currentTranslate = clamp(value);
+                    shell.dataset.translateX = String(currentTranslate);
+                    shell.style.left = `calc(${baseX} + ${currentTranslate}px)`;
+                    shell.style.top = baseY;
+                    shell.style.transform = mobile ? 'translate(0, -50%)' : 'translate(20%, -50%)';
+                };
+
+                const finishDrag = () => {
+                    if (!dragging) return;
+                    dragging = false;
+                    shell.classList.remove('is-dragging');
+                    shell.style.transition = 'left 0.22s cubic-bezier(0.22, 1, 0.36, 1), top 0.22s cubic-bezier(0.22, 1, 0.36, 1)';
+                    const inertia = clamp(currentTranslate + velocityX * 18);
+                    apply(inertia);
+                    document.removeEventListener('pointermove', onPointerMove);
+                    document.removeEventListener('pointerup', finishDrag);
+                    document.removeEventListener('pointercancel', finishDrag);
+                };
+
+                function onPointerMove(event) {
+                    if (!dragging) return;
+                    const deltaX = event.clientX - startX;
+                    const nowVelocity = event.clientX - lastClientX;
+                    velocityX = nowVelocity;
+                    lastClientX = event.clientX;
+                    apply(startTranslate + deltaX);
+                }
+
+                shell.addEventListener('pointerdown', (event) => {
+                    if (event.target.closest('button, a, input, textarea, select')) {
+                        return;
+                    }
+                    dragging = true;
+                    startX = event.clientX;
+                    lastClientX = event.clientX;
+                    startTranslate = Number(shell.dataset.translateX || 0);
+                    velocityX = 0;
+                    shell.classList.add('is-dragging');
+                    shell.style.transition = 'none';
+                    document.addEventListener('pointermove', onPointerMove);
+                    document.addEventListener('pointerup', finishDrag);
+                    document.addEventListener('pointercancel', finishDrag);
+                });
+
+                apply(Number(shell.dataset.translateX || 0));
+            }
+
+            enableHorizontalDrag(modalShell);
+            enableHorizontalDrag(selfShell);
 
             let marks = [];
 
