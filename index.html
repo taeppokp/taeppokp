@@ -290,7 +290,7 @@
             z-index: 1000;
             padding: 24px;
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow-y: hidden;
+            overflow-y: auto;
             overflow-x: hidden;
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
@@ -376,7 +376,7 @@
             word-break: keep-all;
             overflow-wrap: break-word;
             overflow-x: hidden;
-            overflow-y: hidden;
+            overflow-y: auto;
             cursor: grab;
             scroll-snap-align: center;
             user-select: none;
@@ -394,8 +394,8 @@
             background: #e6e6e6;
             word-break: keep-all;
             overflow-wrap: break-word;
-            overflow-x: visible;
-            overflow-y: visible;
+            overflow-x: hidden;
+            overflow-y: auto;
             cursor: grab;
             scroll-snap-align: center;
             user-select: none;
@@ -4527,10 +4527,12 @@
             const startupModal = document.getElementById('startup-modal');
             const startupOpen = startupModal && startupModal.classList.contains('open');
             const selfOpen = selfModal && selfModal.classList.contains('open');
-            const shouldLock = startupOpen || selfOpen;
+            const shouldLock = (startupOpen || selfOpen) && window.innerWidth <= 800;
 
             document.body.style.overflow = shouldLock ? 'hidden' : '';
+            document.body.style.overflowY = shouldLock ? 'hidden' : '';
             document.body.style.overflowX = shouldLock ? 'hidden' : '';
+            document.documentElement.style.overflowY = shouldLock ? 'hidden' : '';
             document.documentElement.style.overflowX = shouldLock ? 'hidden' : '';
         }
 
@@ -4547,6 +4549,8 @@
                 });
             }
         });
+
+        window.addEventListener('resize', syncPageLockState);
 
         // 첫번째 팝업
         document.addEventListener('DOMContentLoaded', () => {
