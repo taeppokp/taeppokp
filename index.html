@@ -14,7 +14,7 @@
             letter-spacing: 0.12rem;
             line-height: 200%;
             background-color: #878787;
-            margin: 420px 50px 50px 50px;
+            margin: 200px 50px 50px 50px;
             
         }
         .footer {
@@ -288,12 +288,13 @@
             display: none;
             background: rgba(0,0,0,0.15);
             z-index: 1000;
-            padding: 24px;
+            
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow-y: auto;
-            overflow-x: hidden;
+            overflow: hidden;
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
+            transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
         }
         #self-modal {
             position: fixed;
@@ -301,12 +302,13 @@
             display: none;
             background: rgba(0,0,0,0.15);
             z-index: 1100;
-            padding: 24px;
+            /* padding: 24px; */
             cursor: url('img/placebutton.png') 28 28, url('img/placebutton.png'), crosshair;
-            overflow-y: auto;
-            overflow-x: hidden;
+            overflow: hidden;
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
+            transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
         }
         #open-self-modal {
             display: none !important;
@@ -334,8 +336,8 @@
         
         .startup-modal-shell {
             position: absolute;
-            left: 18%;
-            top: 70%;
+            left: 45px;
+            top: 130px;
             transform: translate(20%, -50%);
             overflow: visible;
             pointer-events: auto;
@@ -347,8 +349,8 @@
         }
         .self-modal-shell {
             position: absolute;
-            left: 12%;
-            top: 50%;
+            left: 40px;
+            top: 120px;
             transform: translate(10%, -50%);
             overflow: visible;
             pointer-events: auto;
@@ -364,28 +366,9 @@
         }
         #startup-modal-box {
             position: relative;
-            width: 600px;
-            max-width: 600px;
-            min-width: 600px;
-            min-height: 1100px;
-            max-height: calc(100vh - 80px);
-            padding: 60px 90px 24px 24px;
-            box-sizing: border-box;
-            border: 2px solid #8ec999b0;
-            background: #e6e6e6;
-            word-break: keep-all;
-            overflow-wrap: break-word;
-            overflow-x: hidden;
-            overflow-y: auto;
-            cursor: grab;
-            scroll-snap-align: center;
-            user-select: none;
-        }
-        #self-modal-box {
-            position: relative;
-            max-width: 600px;
-            width: 600px;
-            min-width: 600px;
+            width: 650px;
+            max-width: 650px;
+            min-width: 650px;
             min-height: 800px;
             max-height: calc(100vh - 80px);
             padding: 20px 20px 40px 20px;
@@ -394,12 +377,41 @@
             background: #e6e6e6;
             word-break: keep-all;
             overflow-wrap: break-word;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
             cursor: grab;
             scroll-snap-align: center;
             user-select: none;
         }
+        
+        #self-modal-box {
+            position: relative;
+            max-width: 600px;
+            width: 600px;
+            min-width: 600px;
+            min-height: 700px;
+            max-height: calc(100vh - 80px);
+            padding: 20px 20px 40px 20px;
+            box-sizing: border-box;
+            border: 2px solid #8ec999b0;
+            background: #e6e6e6;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            overflow: hidden;
+            cursor: grab;
+            scroll-snap-align: center;
+            user-select: none;
+        }
+        #self-title {
+            font-size:17px;
+            font-weight:900;
+            line-height: 1.5em;
+        }
+        #self-introduction-text {
+            font-size:14px;
+            padding:20px;
+            line-height: 1.5em;
+        }
+
         #startup-modal-box,
         #self-modal-box,
         .startup-modal-caption,
@@ -428,9 +440,9 @@
         }
         .startup-modal-image {
             display: block;
-            width: 400px;
+            width: 600px;
             min-width: 0;
-            max-width: 100%;
+            max-width: 600px;
             height: 300px;
             object-fit: contain;
             background: transparent;
@@ -438,10 +450,10 @@
         }
         #startup-image {
             display: block;
-            width: 400px;
+            width: 600px;
             min-width: 0;
-            max-width: 100%;
-            height: 300px;
+            max-width: 600px;
+            height: auto;
             object-fit: contain;
         }
         .fake-cursor {
@@ -549,7 +561,7 @@
         }
 
         .startup-modal-caption {
-            padding: 14px 18px 18px;
+            padding: 9px 14px 9px;
             color: #333;
             font-size: 17px;
             font-weight:900;
@@ -577,58 +589,82 @@
 
         @media (max-width: 800px) {
             .startup-modal-shell {
-                left: 50%;
-                top: 64%;
+                left: -200px;
+                top: -800px;
                 transform: translate(-50%, -50%);
             }
             .self-modal-shell {
-                left: 50%;
-                top: 62%;
-                transform: translate(-50%, -50%);
+                left: 100px;
+                top: 30px;
+                transform: translate(-50%, -100%);
             }
             #startup-modal, #self-modal {
-                padding: 12px;
-                overflow-x: hidden;
-                overflow-y: auto;
+                padding: 9px;
+                overflow: hidden;
             }
             #startup-modal-box {
-                width: min(300px, calc(100vw - 24px));
+                left: -200px;
+                top: -800px;
+                width: min(320px, calc(100vw - 24px));
                 min-width: 0;
-                max-width: min(300px, calc(100vw - 24px));
+                max-width: min(320px, calc(100vw - 24px));
                 min-height: 620px;
                 max-height: calc(100vh - 70px);
-                padding: 16px 12px 20px;
+                padding: 16px 8px 20px 8px;
                 overflow-x: hidden;
-                font-size: 11.5px;
+                font-size: 10px;
                 line-height: 1.6;
             }
             #self-modal-box {
-                width: min(300px, calc(100vw - 24px));
+                left: 100px;
+                top: 30px;
+                transform: translate(-50%, -100%);
+                width: min(320px, calc(100vw - 24px));
                 min-width: 0;
-                max-width: min(300px, calc(100vw - 24px));
-                padding: 16px 12px 20px;
+                max-width: min(320px, calc(100vw - 24px));
+                padding: 10px 8px 10px 8px;
+                min-height: 620px;
+                max-height: calc(100vh - 70px);
                 overflow-x: hidden;
-                font-size: 11.5px;
-                line-height: 1.6;
             }
+            #self-title {
+                font-size: 12px;
+                font-weight: 900;
+                line-height: 1.5em;
+                letter-spacing: 0.10rem;
+            }
+            #self-introduction-text {
+                font-size: 10px;
+                padding: 10px;
+                line-height: 1.5em;
+                letter-spacing: 0.08rem;
+            }
+            #self-close {
+                top: -580px;
+                left: -50px;
+             }
+             .startup-modal-button {
+                top:-790px;
+                left:-185px;
+             }
             #startup-image,
             .startup-modal-image {
-                width: min(180px, calc(100vw - 96px));
+                width: min(300px, calc(100vw - 96px));
                 min-width: 0;
-                max-width: min(180px, calc(100vw - 96px));
+                max-width: min(300px, calc(100vw - 96px));
                 height: auto;
             }
             #self-image {
-                width: min(170px, calc(100vw - 110px));
+                width: min(300px, calc(100vw - 110px));
                 min-width: 0;
-                max-width: min(170px, calc(100vw - 110px));
+                max-width: min(300px, calc(100vw - 110px));
                 height: auto;
             }
             .startup-modal-caption {
                 width: 100%;
                 min-width: 0;
                 max-width: 100%;
-                font-size: 11.5px;
+                font-size: 12px;
                 letter-spacing: 0.02rem;
                 line-height: 1.6;
                 word-break: break-word;
@@ -4446,7 +4482,7 @@
     </table>
     <!-- 팝업창1 좌표-->
     <div id="startup-modal" aria-hidden="true">
-        <div id="startup-modal-shell" class="startup-modal-shell" data-base-x="15%" data-base-y="70%">
+        <div id="startup-modal-shell" class="startup-modal-shell" data-base-x="10%" data-base-y="50%" data-mobile-top="48%" data-mobile-left="35%">
             <div id="startup-modal-box">
                 <div>
                     <img id="startup-image" class="startup-modal-image" src="img/IMG_0007.png" alt="Startup Popup Image">
@@ -4455,14 +4491,14 @@
                     <strong>당신의 위치가 궁금합니다.</strong><br>
                     
                     <br>
-                    <div style="margin-top:8px; font-family: 'gothic';font-size:15px; text-align:left; line-height: 1.5em;color:#8ec999b0;">
+                    <div style="margin-top:8px; font-family: 'gothic';font-size:12px; text-align:left; line-height: 1.5em;color:#333;">
                         1. 이미지 위 당신의 위치를 클릭하여 표시해주세요. 
                         <Br>
                         2. 표시했다면 "다운로드"를 누르세요. 당신의 위치가 포함된 이미지가 내려받아집니다.
                        <br>
                         3 원하신다면 저의 이메일로 보내주시겠어요? 당신의 위치를 기다립니다. <a href="mailto:lnsu825@gmail.com" style="font: weight 100;">lnsu825@gmail.com</a>
                     </div>
-                    <Br><Br>
+                    <Br>
                     <br>날아가는 해결과 쌓이는 문제, 달아나는 문제와 쫓아오는 해결. 어떻게 바꾸어도 같은 말처럼 들립니다. 어떤 것은 독촉하고 어떤 것은 당근을 눈앞에 휘두릅니다. 당근이 돌칼이 되고 독촉이 포옹이 됩니다. 
                     <Br>
                     3년 전 그린 회화 한 점이 떠오릅니다. 
@@ -4496,15 +4532,15 @@
     </div>
     <!-- 팝업창2 자기소개-->
      <div id="self-modal" class="startup-modal" aria-hidden="true">
-        <div id="self-modal-shell" class="self-modal-shell" data-base-x="10%" data-base-y="50%">
+        <div id="self-modal-shell" class="self-modal-shell" data-base-x="5%" data-base-y="40%" data-mobile-top="50%" data-mobile-left="15%">
             <div id="self-modal-box">
                 <img id="self-image" src="img/self_front.jpg" alt="self-front">
-                <div style="font-size:20px;font-weight:900;">
+                <div id="self-title">
                     <Br>
-                    『자기소개 Self-introduction』이 2026년 9월 7일 발행되었습니다.
+                    『자기소개 Self-introduction』이 2026년 9월 7일<br>발행되었습니다.
                  </div>
-                 <div style="font-size:17px; margin-top:20px;margin-right:20px; line-height: 1.5em;">
-                    『자기소개 Self-introduction』는 단편소설 <strong>「자기소개」</strong>와 만화 <strong>「매미 제비」</strong>로 구성된 단행본입니다. 다른 형식을 띠는 두 단편은 한 여성에 대한 시선을 '자기소개'라는 사회적・언어적 표현 방식과 비언어적 지면으로 교차시킵니다. <strong>「매미 제비」</strong>는 다른 삶과 숨쉬기의 양상을 띠는 존재들을 기이하게 연쇄되는 시선으로 말 없이 마주합니. 책의 뒷부분에는 동명의 작품 <매미 제비>를 그릴 무렵의 작가노트 일부와 작가의 후기가 수록되어 있습니다.
+                 <div id="introduction-text">
+                    『자기소개 Self-introduction』는 단편소설 <strong>「자기소개」</strong>와 만화 <strong>「매미 제비」</strong>로 구성된 단행본입니다. 다른 형식을 띠는 두 단편은 한 여성에 대한 시선을 '자기소개'라는 사회적・언어적 표현 방식을 숨쉬기로 변주시킵니다. <strong>「매미 제비」</strong>는 다른 삶과 숨쉬기의 양상을 띠는 존재들을 기이하게 연쇄되는 시선으로 마주합니다.
                     <br>
                     <br>
                     더 자세한 정보와 소식은 또다른 창에서 확인해주세요.
@@ -4619,12 +4655,15 @@
 
                 let dragging = false;
                 let startX = 0;
-                let startTranslate = 0;
+                let startY = 0;
+                let startTranslateX = 0;
+                let startTranslateY = 0;
                 let lastClientX = 0;
                 let velocityX = 0;
-                let currentTranslate = Number(shell.dataset.translateX || 0);
+                let currentTranslateX = Number(shell.dataset.translateX || 0);
+                let currentTranslateY = Number(shell.dataset.translateY || 0);
 
-                const clamp = (value) => {
+                const clampX = (value) => {
                     const mobile = window.innerWidth <= 800;
                     if (mobile) {
                         const viewportWidth = window.innerWidth;
@@ -4637,15 +4676,43 @@
                     const maxValue = 240;
                     return Math.max(minValue, Math.min(maxValue, value));
                 };
-                const apply = (value) => {
+
+                const clampY = (value) => {
+                    const viewportHeight = window.innerHeight || 800;
+                    const maxOffset = Math.max(140, viewportHeight * 0.28);
+                    return Math.max(-maxOffset, Math.min(maxOffset, value));
+                };
+
+                const apply = (nextX, nextY) => {
                     const mobile = window.innerWidth <= 800;
-                    const baseX = mobile ? '50%' : (shell.dataset.baseX || '50%');
-                    const baseY = mobile ? (shell.id === 'startup-modal-shell' ? '64%' : '62%') : (shell.dataset.baseY || '50%');
-                    currentTranslate = clamp(value);
-                    shell.dataset.translateX = String(currentTranslate);
-                    shell.style.left = `calc(${baseX} + ${currentTranslate}px)`;
+                    const baseX = mobile ? '30%' : (shell.dataset.baseX || '30%');
+                    const baseY = mobile ? (shell.dataset.mobileTop || '100%') : (shell.dataset.baseY || '100%');
+                    const modalRoot = shell.closest('.startup-modal');
+                    currentTranslateX = clampX(nextX);
+                    currentTranslateY = clampY(nextY);
+                    shell.dataset.translateX = String(currentTranslateX);
+                    shell.dataset.translateY = String(currentTranslateY);
+
+                    if (mobile) {
+                        shell.style.left = '50%';
+                        shell.style.top = baseY;
+                        shell.style.transform = 'translate(-50%, -50%)';
+                        if (modalRoot) {
+                            const basePadding = 24;
+                            const nextPadding = Math.max(8, basePadding + currentTranslateY);
+                            modalRoot.style.paddingTop = `${nextPadding}px`;
+                            modalRoot.style.paddingBottom = '24px';
+                        }
+                        return;
+                    }
+
+                    shell.style.left = `calc(${baseX} + ${currentTranslateX}px)`;
                     shell.style.top = baseY;
-                    shell.style.transform = mobile ? 'translate(-50%, -50%)' : 'translate(20%, -50%)';
+                    shell.style.transform = 'translate(20%, -50%)';
+                    if (modalRoot) {
+                        modalRoot.style.paddingTop = '24px';
+                        modalRoot.style.paddingBottom = '24px';
+                    }
                 };
 
                 const finishDrag = () => {
@@ -4653,8 +4720,8 @@
                     dragging = false;
                     shell.classList.remove('is-dragging');
                     shell.style.transition = 'left 0.22s cubic-bezier(0.22, 1, 0.36, 1), top 0.22s cubic-bezier(0.22, 1, 0.36, 1)';
-                    const inertia = clamp(currentTranslate + velocityX * 18);
-                    apply(inertia);
+                    const inertia = clampX(currentTranslateX + velocityX * 18);
+                    apply(inertia, currentTranslateY);
                     document.removeEventListener('pointermove', onPointerMove);
                     document.removeEventListener('pointerup', finishDrag);
                     document.removeEventListener('pointercancel', finishDrag);
@@ -4663,10 +4730,11 @@
                 function onPointerMove(event) {
                     if (!dragging) return;
                     const deltaX = event.clientX - startX;
+                    const deltaY = event.clientY - startY;
                     const nowVelocity = event.clientX - lastClientX;
                     velocityX = nowVelocity;
                     lastClientX = event.clientX;
-                    apply(startTranslate + deltaX);
+                    apply(startTranslateX + deltaX, startTranslateY + deltaY);
                 }
 
                 shell.addEventListener('pointerdown', (event) => {
@@ -4675,8 +4743,10 @@
                     }
                     dragging = true;
                     startX = event.clientX;
+                    startY = event.clientY;
                     lastClientX = event.clientX;
-                    startTranslate = Number(shell.dataset.translateX || 0);
+                    startTranslateX = Number(shell.dataset.translateX || 0);
+                    startTranslateY = Number(shell.dataset.translateY || 0);
                     velocityX = 0;
                     shell.classList.add('is-dragging');
                     shell.style.transition = 'none';
@@ -4685,7 +4755,7 @@
                     document.addEventListener('pointercancel', finishDrag);
                 });
 
-                apply(Number(shell.dataset.translateX || 0));
+                apply(Number(shell.dataset.translateX || 0), Number(shell.dataset.translateY || 0));
             }
 
             enableHorizontalDrag(modalShell);
