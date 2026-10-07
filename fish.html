@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+       body {
+            font-family: 'Gowun Batang', Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            line-height: 200%;
+            background-color: #878787;
+            margin: 200px 20px 20px 50px;
+        }
+        strong{
+            font-weight: 900;
+            font-style: italic;
+            font-size: 18px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            align-items: center;
+            gap: 20px;
+            min-height: 30px;
+            width: 100%;
+            max-width: 100%;
+            line-height: 1.4;
+            text-align: right;
+            box-sizing: border-box;
+            padding: 20px 10px;
+            background-color: rgb(165 165 165 / 85%);
+            box-shadow: inset 140px 30px 40px #8ec999e1; /* 안쪽 그림자 */
+            z-index: 1200;
+        }
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 30px;
+        }
+        .footer-nav a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .footer-nav a:hover,
+        .footer-nav a:focus-visible {
+            text-decoration: underline;
+            color:#f59a76d4;
+        }
+        @media (max-width: 780px) {
+            .footer {
+                align-items: center;
+                gap: 5px;
+                font-size: 11px;
+                padding: 10px 10px;
+            }
+            .footer-nav {
+                gap: 0 12px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            list-style: none;
+            width: 400px;
+            /* padding-left: 0; */
+            margin: 0 0 30px auto;
+        }
+        li {
+            display: block;
+            text-align: left;
+            /* background-color: #f59a76d4; */
+            margin-bottom: 10px;
+            padding-right: 14px;
+            padding-left: 14px;
+            /* position: relative; */
+        }
+        li::before {
+            content: "***...";
+            padding-right: 7px;
+            color: #333;
+        }
+        li::after {
+            content: "...***";
+            color: #333;
+            padding-left: 7px;
+        }
+        #instagram-links a {
+            text-decoration: none;
+            font-style: italic;
+            color: #333;
+        }
+        #instagram-links a:hover {
+            color: #8ec999b0;
+            font-weight: 900;
+        }
+
+         @media (max-width: 800px) {
+            body {
+                margin: 100px 8px 60px;
+                font-size: clamp(11px, 3vw, 12px);
+                letter-spacing: 0.02rem;
+                line-height: 200%;
+                overflow-x: auto;
+            }
+            .fish {
+                width: max-content;
+            }
+            .low-height,
+            .high-height {
+                width: max-content;
+                min-width: 100%;
+                justify-content: flex-start;
+            }
+            strong{
+                font-weight: 700;
+                font-style: italic;
+                font-size: 13px;
+            }
+            ul {
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 0;
+            }
+        }
+
+        .fit-fill {
+            transition: all 0.3s ease;
+            width: 150px;
+            height: 7px;
+            object-fit: fill;       /* 비율 무시, 컨테이너를 꽉 채움 (늘어남) */
+        }
+        .fit-fill2 {
+            transition: all 0.3s ease;
+            width: 100px;
+            height: 7px;
+            object-fit: fill;       /* 비율 무시, 컨테이너를 꽉 채움 (늘어남) */
+        }
+        
+       
+        .fit-fill:hover {
+            height: 100px;
+        }
+        .fit-fill.active {
+            height: 100px;
+        }
+        .fit-fill2:hover {
+            height: 150px;
+        }
+        .fit-fill2.active {
+            height: 150px;
+        }
+        
+        .low-height {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            align-items: flex-end;
+        }
+        .high-height {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            align-items: flex-end;
+        }
+    </style>
+    <ul id="instagram-links">
+        <li style="text-align:right;"><a href="https://www.instagram.com/taep_pokp_?utm_source=qr">@taep_pokp_</a></li>
+        <li style="text-align:right;"><a href="https://www.instagram.com/ohne_seelen?utm_source=qr">@ohne_seelen</a></li>
+    </ul>
+</head>
+<body>
+    <div class="fish"><!--전개도비늘 -->
+                
+                <div class="low-height">
+                    <div>
+                        <img src="img/1011.jpg" alt="1011" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1021.jpg" alt="1021" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1031.jpg" alt="1031" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1041.jpg" alt="1041" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1051.jpg" alt="1051" class="fit-fill">
+                    </div>
+                </div>
+                <div class="low-height">
+                    <div>
+                        <img src="img/1012.jpg" alt="1012" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1022.jpg" alt="1022" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1032.jpg" alt="1032" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1042.jpg" alt="1042" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1052.jpg" alt="1052" class="fit-fill">
+                    </div>
+                </div>
+                <div class="low-height">    
+                    <div>
+                        <img src="img/1061.jpg" alt="1061" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1071.jpg" alt="1071" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1081.jpg" alt="1081" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1091.jpg" alt="1091" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1101.jpg" alt="1101" class="fit-fill">
+                    </div>   
+                </div>
+                <div class="low-height">
+                    <div>
+                        <img src="img/1062.jpg" alt="1062" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1072.jpg" alt="1072" class="fit-fill">
+                    </div> 
+                    <div>
+                        <img src="img/1082.jpg" alt="1082" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1092.jpg" alt="1092" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/1102.jpg" alt="1102" class="fit-fill">
+                    </div>
+                </div>
+                <div class="low-height">
+                    <div>
+                        <Em>전개도는 일종의 웹에 대한 은유이다</Em>
+                    </div>
+                </div>
+                <div class="low-height">
+                    <div>
+                        <img src="img/2011.jpg" alt="2011" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2021.jpg" alt="2021" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2031.jpg" alt="2031" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2041.jpg" alt="2041" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2051.jpg" alt="2051" class="fit-fill">
+                    </div>
+                </div>
+                 <div class="low-height">
+                        <div>
+                            <img src="img/2062.jpg" alt="2062" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2072.jpg" alt="2072" class="fit-fill">
+                        </div> 
+                        <div>
+                            <img src="img/2082.jpg" alt="2082" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2092.jpg" alt="2092" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2102.jpg" alt="2102" class="fit-fill">
+                        </div>
+                </div>
+                <div class="low-height">
+                    <div>
+                        <img src="img/2061.jpg" alt="2061" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2071.jpg" alt="2071" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2081.jpg" alt="2081" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2091.jpg" alt="2091" class="fit-fill">
+                    </div>
+                    <div>
+                        <img src="img/2101.jpg" alt="2101" class="fit-fill">
+                    </div>
+                </div>
+                <div class="low-height">
+                        <div>
+                            <img src="img/2012.jpg" alt="2012" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2022.jpg" alt="2022" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2032.jpg" alt="2032" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2042.jpg" alt="2042" class="fit-fill">
+                        </div>
+                        <div>
+                            <img src="img/2052.jpg" alt="2052" class="fit-fill">
+                        </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/3011.jpg" alt="3011" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3021.jpg" alt="3021" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3031.jpg" alt="3031" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3041.jpg" alt="3041" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3051.jpg" alt="3051" class="fit-fill2">
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <Em>상공한다 기어간다 발걸음이 간다 그곳에</Em>
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/3012.jpg" alt="3012" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3022.jpg" alt="3022" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3032.jpg" alt="3032" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3042.jpg" alt="3042" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3052.jpg" alt="3052" class="fit-fill2">
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/3061.jpg" alt="3061" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3071.jpg" alt="3071" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3081.jpg" alt="3081" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3091.jpg" alt="3091" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3101.jpg" alt="3101" class="fit-fill2">
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/3062.jpg" alt="3062" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3072.jpg" alt="3072" class="fit-fill2">
+                    </div> 
+                    <div>
+                        <img src="img/3082.jpg" alt="3082" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3092.jpg" alt="3092" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/3102.jpg" alt="3102" class="fit-fill2">
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/4011.jpg" alt="4011" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4021.jpg" alt="4021" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4031.jpg" alt="4031" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4041.jpg" alt="4041" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4051.jpg" alt="4051" class="fit-fill2">
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <Em>하고 점성술사가 말한다</Em>
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/4062.jpg" alt="4062" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4072.jpg" alt="4072" class="fit-fill2">
+                    </div> 
+                    <div>
+                        <img src="img/4082.jpg" alt="4082" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4092.jpg" alt="4092" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4102.jpg" alt="4102" class="fit-fill2">
+                    </div>
+                </div>
+                 <div class="high-height">
+                    <div>
+                        <Em>하고 점성술사가 말한다</Em>
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/4061.jpg" alt="4061" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4071.jpg" alt="4071" class="fit-fill2">
+                    </div> 
+                    <div>
+                        <img src="img/4081.jpg" alt="4081" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4091.jpg" alt="4091" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4101.jpg" alt="4101" class="fit-fill2">
+                    </div>
+                </div>
+                 <div class="high-height">
+                    <div>
+                        <Em>하고 점성술사가 말한다</Em>
+                    </div>
+                </div>
+                <div class="high-height">
+                    <div>
+                        <img src="img/4012.jpg" alt="4012" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4022.jpg" alt="4022" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4032.jpg" alt="4032" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4042.jpg" alt="4042" class="fit-fill2">
+                    </div>
+                    <div>
+                        <img src="img/4052.jpg" alt="4052" class="fit-fill2">
+                    </div>
+                </div> 
+                 <div class="high-height">
+                    <div>
+                        <Em>하고 점성술사가 말한다</Em>
+                    </div>
+                </div>
+               
+                <br><br><br>
+                
+            </div>
+            <br><br><br><br><br><br><br><br><br>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hoverTargets = document.querySelectorAll('.fit-fill, .fit-fill2');
+
+            const syncActiveState = () => {
+                hoverTargets.forEach((target) => {
+                    const pinned = target.dataset.pinned === 'true';
+                    const hovered = target.dataset.hovered === 'true';
+                    target.classList.toggle('active', pinned || hovered);
+                });
+            };
+
+            hoverTargets.forEach((el) => {
+                el.addEventListener('mouseenter', () => {
+                    el.dataset.hovered = 'true';
+                    syncActiveState();
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    if (el.dataset.pinned !== 'true') {
+                        el.dataset.hovered = 'false';
+                        syncActiveState();
+                    }
+                });
+
+                el.addEventListener('focus', () => {
+                    el.dataset.hovered = 'true';
+                    syncActiveState();
+                });
+
+                el.addEventListener('blur', () => {
+                    if (el.dataset.pinned !== 'true') {
+                        el.dataset.hovered = 'false';
+                        syncActiveState();
+                    }
+                });
+
+                el.addEventListener('click', () => {
+                    const willPin = el.dataset.pinned !== 'true';
+                    hoverTargets.forEach((target) => {
+                        target.dataset.pinned = (target === el && willPin) ? 'true' : 'false';
+                        target.dataset.hovered = (target === el && willPin) ? 'true' : 'false';
+                    });
+                    syncActiveState();
+                });
+            });
+        });
+    </script>
+    <footer class="footer">
+        <nav class="footer-nav" aria-label="Categories">
+            <a href="index.html#astrologer"><br>점성술사</a>
+            <a href="fish.html">등,<br>바닥,<br>배</a>
+            <a href="biography.html#biography"><br>전기</a>
+            <a href="note.html#note"><br>A6</a>
+        </nav>
+        <br>
+        <div style="font-size: smaller;">© 2026 by Kil Insu. All rights reserved.</div>
+        <br>
+    </footer>
+</body>
+</html>
