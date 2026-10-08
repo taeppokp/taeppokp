@@ -272,7 +272,7 @@
         #self-title {
             font-size:15px;
             font-weight:900;
-            line-height: 1.5em;
+            line-height: 1.2em;
         }
         #self-introduction-text {
             font-size:13px;
@@ -336,7 +336,7 @@
         .startup-modal-controls {
             position: absolute;
             top: 20px;
-            right: -100px;
+            right: -90px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -401,7 +401,7 @@
             all: unset;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
+            justify-content: right;
             width: max-content;
             min-width: 96px;
             height: 46px;
@@ -418,12 +418,15 @@
         }
         #startup-close {
             background: #e6e6e6;
+            font-family: 'gothic';
         }
         #startup-download {
             background: #8ec999b0;
+            font-family: 'gothic';
         }
         #startup-clear {
             background: #e6e6e6;
+            font-family: 'gothic';
         }
 
         .startup-modal-caption {
@@ -439,7 +442,7 @@
         #startup-caption {
             font-size:13px;
             fonot-weight:400;
-            padding:20px;
+            padding:9px;
             line-height: 1.2em;
         }
                 
@@ -460,144 +463,144 @@
 
         .no-select { user-select: none; }
 
-        @media (min-width: 801px) and (max-width: 1500px) {
-            #startup-modal-box,
-            #self-modal-box {
-                width: min(400px, calc(50vw - 36px));
-                min-width: 0;
-                max-width: min(400px, calc(50vw - 36px));
-                height: auto;
-                min-height: 0;
-                max-height: calc(100vh - 160px);
-                overflow: auto;
-            }
-            #self-modal-box {
-                width: min(400px, calc(50vw - 36px));
-                max-width: min(400px, calc(50vw - 36px));
-            }
-            .startup-modal-caption {
-                font-size: 13px;
-                line-height: 1.2em;
-               
-            }
-            #startup-caption {
-                font-size: 11px;
-                line-height: 1.2em;
-            }
-            #self-title {
-                font-size: 14px;
-                font-weight: 900;
-            }
-            #self-introduction-text {
-                padding: 12px;
-                font-size: 11px;
-            }
-            .startup-modal-controls {
-                top: 10px;
-                right: -52px;
-                flex-direction: column;
-                gap: 7px;
-            }
-        }
+                @media (min-width: 801px) and (max-width: 1500px) {
+                    #startup-modal-box,
+                    #self-modal-box {
+                        width: min(400px, calc(50vw - 36px));
+                        min-width: 0;
+                        max-width: min(400px, calc(50vw - 36px));
+                        height: auto;
+                        min-height: 0;
+                        max-height: calc(100vh - 160px);
+                        overflow: auto;
+                    }
+                    #self-modal-box {
+                        width: min(400px, calc(50vw - 36px));
+                        max-width: min(400px, calc(50vw - 36px));
+                    }
+                    .startup-modal-caption {
+                        font-size: 13px;
+                        line-height: 1.2em;
+                       
+                    }
+                    #startup-caption {
+                        font-size: 11px;
+                        line-height: 1.2em;
+                    }
+                    #self-title {
+                        font-size: 13px;
+                        font-weight: 900;
+                    }
+                    #self-introduction-text {
+                        padding: 12px;
+                        font-size: 11px;
+                    }
+                    .startup-modal-controls {
+                        top: 10px;
+                        right: -52px;
+                        flex-direction: column;
+                        gap: 7px;
+                    }
+                }
 
-        @media (max-width: 800px) {
-            #startup-modal, #self-modal {
-                padding: 9px;
-                overflow: hidden;
-            }
-            #startup-modal-box,
-            #self-modal-box {
-                left: 0;
-                top: 0;
-                width: min(420px, calc(100vw - 28px));
-                min-width: 0;
-                max-width: min(420px, calc(100vw - 28px));
-                height: auto;
-                max-height: calc(100vh - 100px);
-                padding: 16px 8px;
-                overflow: auto;
-                font-size: 12px;
-                line-height: 1.4;
-            }
-            .startup-modal-controls {
-                top: 10px;
-                right: -55px;
-                flex-direction: column;
-                gap: 6px;
-            }
-            .startup-modal-button {
-                top: 0;
-                left: 0;
-                min-width: 54px;
-                min-height: 24px;
-                font-size: 11px;
-            }
-            .startup-modal-button > button {
-                width: 54;
-                height: 24px;
-                min-height: 24px;
-                padding: 4px 8px;
-                font-size: 11px;
-                line-height: 1.2;
-                letter-spacing: 0;
-                white-space: nowrap;
-            }
-            #self-title {
-                font-size: 12px;
-                font-weight: 900;
-                line-height: 1.5em;
-                letter-spacing: 0.10rem;
-            }
-            #self-introduction-text {
-                font-size: 10px;
-                font-weight:400;
-                padding: 10px;
-                line-height: 1.2em;
-                letter-spacing: 0.08rem;
-            }
-            #self-close {
-                top: 0;
-                right: 0;
-                min-width: 54px;
-                min-height: 24px;
-                padding: 4px 8px;
-                font-size: 11px;
-             }
-            #self-modal-box {
-                width: min(330px, calc(100vw - 80px));
-                max-width: min(330px, calc(100vw - 80px));
-                max-height: none;
-                overflow: visible;
-            }
-            #startup-image,
-            .startup-modal-image {
-                width: 100%;
-                min-width: 0;
-                max-width: 100%;
-                height: auto;
-            }
-            #self-image {
-                width: 100%;
-                min-width: 0;
-                max-width: 100%;
-                height: auto;
-            }
-            .startup-modal-caption {
-                width: 100%;
-                min-width: 0;
-                max-width: 100%;
-                font-size: 11px;
-                letter-spacing: 0.02rem;
-                line-height: 1.2em;
-                word-break: keep-all;
-                overflow-wrap: anywhere;
-            }
-            #startup-caption {
-                font-size: 10px;
-                line-height: 1.2em;
-            }
-            
-        }
+                            @media (max-width: 800px) {
+                                #startup-modal, #self-modal {
+                                    padding: 9px;
+                                    overflow: hidden;
+                                }
+                                #startup-modal-box,
+                                #self-modal-box {
+                                    left: 0;
+                                    top: 0;
+                                    width: min(420px, calc(100vw - 28px));
+                                    min-width: 0;
+                                    max-width: min(420px, calc(100vw - 28px));
+                                    height: auto;
+                                    max-height: calc(100vh - 100px);
+                                    padding: 16px 8px;
+                                    overflow: auto;
+                                    font-size: 12px;
+                                    line-height: 1.4;
+                                }
+                                .startup-modal-controls {
+                                    top: 10px;
+                                    right: -55px;
+                                    flex-direction: column;
+                                    gap: 6px;
+                                }
+                                .startup-modal-button {
+                                    top: 0;
+                                    left: 0;
+                                    min-width: 54px;
+                                    min-height: 24px;
+                                    font-size: 11px;
+                                }
+                                .startup-modal-button > button {
+                                    width: 54;
+                                    height: 24px;
+                                    min-height: 24px;
+                                    padding: 4px 8px;
+                                    font-size: 11px;
+                                    line-height: 1.2;
+                                    letter-spacing: 0;
+                                    white-space: nowrap;
+                                }
+                                #self-title {
+                                    font-size: 12px;
+                                    font-weight: 900;
+                                    line-height: 1.5em;
+                                    letter-spacing: 0.10rem;
+                                }
+                                #self-introduction-text {
+                                    font-size: 10px;
+                                    font-weight:400;
+                                    padding: 10px;
+                                    line-height: 1.2em;
+                                    letter-spacing: 0.08rem;
+                                }
+                                #self-close {
+                                    top: 0;
+                                    right: 0;
+                                    min-width: 54px;
+                                    min-height: 24px;
+                                    padding: 4px 8px;
+                                    font-size: 11px;
+                                 }
+                                #self-modal-box {
+                                    width: min(330px, calc(100vw - 80px));
+                                    max-width: min(330px, calc(100vw - 80px));
+                                    max-height: none;
+                                    overflow: visible;
+                                }
+                                #startup-image,
+                                .startup-modal-image {
+                                    width: 100%;
+                                    min-width: 0;
+                                    max-width: 100%;
+                                    height: auto;
+                                }
+                                #self-image {
+                                    width: 100%;
+                                    min-width: 0;
+                                    max-width: 100%;
+                                    height: auto;
+                                }
+                                .startup-modal-caption {
+                                    width: 100%;
+                                    min-width: 0;
+                                    max-width: 100%;
+                                    font-size: 11px;
+                                    letter-spacing: 0.02rem;
+                                    line-height: 1.2em;
+                                    word-break: keep-all;
+                                    overflow-wrap: anywhere;
+                                }
+                                #startup-caption {
+                                    font-size: 10px;
+                                    line-height: 1.2em;
+                                }
+                                
+                            }
 
     </style>
     
@@ -745,9 +748,8 @@
                 </div>
                 <div class="startup-modal-caption">
                     <em>당신의 위치가 궁금합니다.</em>
-                    
-                    <br>
-                    <div style="margin-top:8px; font-family: 'gothic';font-size:11px; text-align: center; line-height: 1.2em;color:#333;">
+                    <br><Br>
+                    <div style="margin-top:8px; font-family: 'gothic';font-size:12px; text-align: center; line-height: 1.2em;color:#333;">
                         1. 이미지 위 당신의 위치를 클릭하여 표시해주세요. 
                         <Br>
                         2. 표시했다면 "다운로드"를 누르세요. 당신의 위치가 포함된 이미지가 내려받아집니다.
