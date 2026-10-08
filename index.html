@@ -31,13 +31,13 @@
             justify-content: right;
             align-items: center;
             gap: 20px;
-            min-height: 30px;
+            min-height: 25px;
             width: 100%;
             max-width: 100%;
             line-height: 1.4;
             text-align: right;
             box-sizing: border-box;
-            padding: 20px 10px;
+            padding: 15px 10px;
             background-color: rgb(165 165 165 / 85%);
             box-shadow: inset 140px 30px 40px #8ec999e1; /* 안쪽 그림자 */
             /* padding-bottom: env(safe-area-inset-bottom); */
@@ -68,18 +68,7 @@
                 gap: 0 12px;
             }
         }
-        
-        
-        
-        /* table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0.1;
-            display: block;
-        }
-        tbody {
-            display: block;
-        } */
+       
         .fortune {
             display: flex;
             align-items: flex-start;
@@ -132,7 +121,7 @@
             display: block;
             text-align: left;
             /* background-color: #f59a76d4; */
-            margin-bottom: 10px;
+            margin-bottom: 7px;
             padding-right: 14px;
             padding-left: 14px;
             /* position: relative; */
@@ -281,14 +270,14 @@
             user-select: none;
         }
         #self-title {
-            font-size:17px;
+            font-size:15px;
             font-weight:900;
             line-height: 1.5em;
         }
         #self-introduction-text {
-            font-size:14px;
+            font-size:13px;
             padding:20px;
-            line-height: 1.5em;
+            line-height: 1.2em;
         }
 
         #startup-modal-box,
@@ -346,7 +335,7 @@
         .startup-modal-controls {
             position: absolute;
             top: 20px;
-            right: -90px;
+            right: -100px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -375,15 +364,15 @@
         .startup-modal-button {
             position: relative;
             padding: 0;
-            min-width: 80px;
-            min-height: 28px;
+            min-width: 96px;
+            min-height: 46px;
             display: inline-flex;
             align-items: center;
             justify-content: right;
             box-sizing: border-box;
             font-family: 'gothic';
             font-weight: 500;
-            font-size: 16px;
+            font-size: 15px;
             color: #333;
             cursor: none;
             transform: translateX(0);
@@ -397,10 +386,10 @@
             display: inline-flex;
             justify-content: right;
             box-sizing: border-box;
-            padding: 10px 5px 10px 16px;
+            padding: 4px 8px;
             font-family: 'gothic';
             font-weight: 500;
-            font-size: 16px;
+            font-size: 15px;
             background: #e6e6e6;
             border: 2px solid #8ec999b0;
             border-radius: 0 12px 12px 0;
@@ -413,8 +402,8 @@
             align-items: center;
             justify-content: center;
             width: max-content;
-            min-width: 80px;
-            height: 36px;
+            min-width: 96px;
+            height: 46px;
             padding: 4px 8px;
             box-sizing: border-box;
             border-radius: 0 12px 12px 0;
@@ -439,7 +428,7 @@
         .startup-modal-caption {
             padding: 9px 14px 9px;
             color: #333;
-            font-size: 17px;
+            font-size: 15px;
             font-weight:900;
             text-align: left;
             letter-spacing: 0.12rem;
@@ -481,6 +470,11 @@
             .startup-modal-caption {
                 font-size: 13px;
                 line-height: 1.4;
+               
+            }
+            #startup-caption {
+                font-size: 11px;
+                
             }
             #self-title {
                 font-size: 14px;
@@ -488,11 +482,11 @@
             }
             #self-introduction-text {
                 padding: 12px;
-                font-size: 12px;
+                font-size: 11px;
             }
             .startup-modal-controls {
                 top: 10px;
-                right: -55px;
+                right: -52px;
                 flex-direction: column;
                 gap: 7px;
             }
@@ -531,10 +525,10 @@
                 font-size: 11px;
             }
             .startup-modal-button > button {
-                width: auto;
-                height: 32px;
-                min-height: 32px;
-                padding: 4px 7px;
+                width: 54;
+                height: 24px;
+                min-height: 24px;
+                padding: 4px 8px;
                 font-size: 11px;
                 line-height: 1.2;
                 letter-spacing: 0;
@@ -583,12 +577,13 @@
                 width: 100%;
                 min-width: 0;
                 max-width: 100%;
-                font-size: 11px;
+                font-size: 10px;
                 letter-spacing: 0.02rem;
                 line-height: 1.4;
-                word-break: break-word;
+                word-break: keep-all;
                 overflow-wrap: anywhere;
             }
+            
         }
 
     </style>
@@ -735,25 +730,26 @@
                 <div>
                     <img id="startup-image" class="startup-modal-image" src="img/IMG_0007.png" alt="Startup Popup Image">
                 </div>
-                <div id="startup-caption" class="startup-modal-caption">
+                <div class="startup-modal-caption">
                     <em>당신의 위치가 궁금합니다.</em>
                     
                     <br>
-                    <div style="margin-top:8px; font-family: 'gothic';font-size:12px; text-align:left; line-height: 1.5em;color:#333;">
+                    <div style="margin-top:8px; font-family: 'gothic';font-size:13px; text-align:center; line-height: 1.5em;color:#333;">
                         1. 이미지 위 당신의 위치를 클릭하여 표시해주세요. 
                         <Br>
                         2. 표시했다면 "다운로드"를 누르세요. 당신의 위치가 포함된 이미지가 내려받아집니다.
                        <br>
-                        3 원하신다면 저의 이메일로 보내주시겠어요? 당신의 위치를 기다립니다. <a href="mailto:lnsu825@gmail.com" style="font: weight 100;">lnsu825@gmail.com</a>
+                        3 원하신다면 저에게 보내주시겠어요? 당신의 위치를 기다립니다. <a href="mailto:lnsu825@gmail.com" style="font: weight 100;">lnsu825@gmail.com</a>
                     </div>
                     <Br>
-                    <br>날아가는 해결과 쌓이는 문제, 달아나는 문제와 쫓아오는 해결. 어떻게 바꾸어도 같은 말처럼 들립니다. 어떤 것은 독촉하고 어떤 것은 당근을 눈앞에 휘두릅니다. 당근이 돌칼이 되고 독촉이 포옹이 됩니다. 
-                    <Br>
-                    3년 전 그린 회화 한 점이 떠오릅니다. 
-                    <Br>
-                    고운 천에 그린 그림을 삼킨 무엇무엇 가상혈육. 
-                    이것은 기억될까요?<Br>
-                    <br>
+                    <div id="startup-caption" >
+                        <br>날아가는 해결과 쌓이는 문제, 달아나는 문제와 쫓아오는 해결. 어떻게 바꾸어도 같은 말처럼 들립니다. 어떤 것은 독촉하고 어떤 것은 당근을 눈앞에 휘두릅니다. 당근이 돌칼이 되고 독촉이 포옹이 됩니다. 
+                        <Br>
+                        3년 전 그린 회화 한 점이 떠오릅니다. 
+                        <Br>
+                        고운 천에 그린 그림을 삼킨 무엇무엇 가상혈육. 이것은 기억될까요?<Br>
+                        <br>
+                    </div>
                 </div>
             </div>
             <div class="startup-modal-controls">
@@ -786,11 +782,11 @@
                 <img id="self-image" src="img/self_front.jpg" alt="self-front">
                 <div id="self-title">
                     <Br>
-                    『자기소개 Self-introduction』이 2026년 9월 7일<br>발행되었습니다.
+                    『자기소개 Self-introduction』이 2026년 9월 7일 발행되었습니다.
                  </div>
                  <br>
                  <div id="introduction-text">
-                    『자기소개 Self-introduction』는 단편소설 「자기소개」와 만화 「매미 제비」로 구성된 단행본입니다. 다른 형식을 띠는 두 단편은 한 여성에 대한 시선을 '자기소개'라는 사회적・언어적 표현 방식을 숨쉬기로 변주시킵니다. 「매미 제비」는 다른 삶과 숨쉬기의 양상을 띠는 존재들을 기이하게 연쇄되는 시선으로 마주합니다.
+                    소설과 만화 묶음집. 단편소설 「자기소개」와 만화「매미 제비」로 구성된 단행본이다. 다른 형식을 띠는 두 단편 위에서 한 여자에 대한 시선이 횡단하고 종단한다. 「매미 제비」는 동명의 한쪽 만화 <매미 제비>를 토대로 한다. 백로에 발행했다.
                     <br>
                     <br>
                     더 자세한 정보와 소식은 또다른 창에서 확인해주세요.
