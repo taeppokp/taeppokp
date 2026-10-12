@@ -8,8 +8,8 @@
          @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
 
         body {
-            font-family: 'Gowun Batang', Arial, sans-serif;
-            font-size: 16px;
+            font-family: 'Gowun Batang', Arial, sans-serif, gothic;
+            font-size: 15px;
             font-weight: 700;
             letter-spacing: 0.08rem;
             word-break: keep-all;
@@ -20,9 +20,8 @@
         strong{
             font-weight: 900;
             font-style: italic;
-            font-size: 18px;
+            font-size: 17px;
         }
-
 
         ul {
             display: flex;
@@ -98,17 +97,17 @@
             text-decoration: underline;
             color:#f59a76d4;
         }
-        @media (max-width: 780px) {
-            .footer {
-                align-items: center;
-                gap: 5px;
-                font-size: 11px;
-                padding: 10px 10px;
+            @media (max-width: 780px) {
+                .footer {
+                    align-items: center;
+                    gap: 5px;
+                    font-size: 11px;
+                    padding: 10px 10px;
+                }
+                .footer-nav {
+                    gap: 0 12px;
+                }
             }
-            .footer-nav {
-                gap: 0 12px;
-            }
-        }
         
         table {
             width: 100%;
@@ -176,54 +175,54 @@
             box-shadow: inset 140px 30px 60px #8ec999e1; /* 안쪽 그림자 */
         }/* 일지 전개도 글블럭 */
 
-        @media (max-width: 800px) {
-            body {
-                margin: 100px 8px 60px;
-                font-size: clamp(11px, 3vw, 12px);
-                letter-spacing: 0.02rem;
-                line-height: 200%;
+            @media (max-width: 800px) {
+                body {
+                    margin: 100px 8px 60px;
+                    font-size: clamp(11px, 3vw, 12px);
+                    letter-spacing: 0.02rem;
+                    line-height: 200%;
+                }
+                strong{
+                    font-weight: 700;
+                    font-style: italic;
+                    font-size: 13px;
+                }
+                ul {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding-left: 0;
+                }
+                td {
+                    width: 100%;
+                    min-width: 0;
+                }
+                .text2 {
+                    width: 100%;
+                    min-width: 0;
+                    align-items:flex-end;
+                    gap: 6px;
+                }
+                .work, .work2 {
+                    flex: 0 0 38%;
+                    min-width: 0;
+                    box-sizing: border-box;
+                    padding: 8px 6px 4px;
+                }
+                .work img, .work2 img {
+                    display: block;
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                }
+                .textbox, .textbox2 {
+                    flex: 1 1 0;
+                    width: 0;
+                    min-width: 0;
+                    margin-left: 0;
+                    padding: 8px 13px 8px 8px;
+                    box-sizing: border-box;
+                }
             }
-            strong{
-                font-weight: 700;
-                font-style: italic;
-                font-size: 13px;
-            }
-            ul {
-                width: 100%;
-                box-sizing: border-box;
-                padding-left: 0;
-            }
-            td {
-                width: 100%;
-                min-width: 0;
-            }
-            .text2 {
-                width: 100%;
-                min-width: 0;
-                align-items:flex-end;
-                gap: 6px;
-            }
-            .work, .work2 {
-                flex: 0 0 38%;
-                min-width: 0;
-                box-sizing: border-box;
-                padding: 8px 6px 4px;
-            }
-            .work img, .work2 img {
-                display: block;
-                width: 100%;
-                max-width: 300px;
-                height: auto;
-            }
-            .textbox, .textbox2 {
-                flex: 1 1 0;
-                width: 0;
-                min-width: 0;
-                margin-left: 0;
-                padding: 8px 13px 8px 8px;
-                box-sizing: border-box;
-            }
-        }
         .textbox-date {
             display: block;
             text-align: right;
@@ -241,6 +240,88 @@
         <tbody>
             <tr>
                 <td>
+                    <div class="text2">
+                        <div class="work2">
+                            <img src="img/staircasedeploymentview.png" alt="계단실전개도" width="300" class="glass">
+                        </div>
+                        <div class="textbox2">
+                            <br>
+                            나약한 도피에 황당한 우연이 겹쳤다. 이런 걸 황당무개하다고 표현해도 될까? 앞으로 더 황당무개한 일이 벌어질 예정이다. 그런 예감이 들고 확신도 든다.<br>
+                            지금 용량에 적응중인 것 같다. 나는 극심한 우울과 불안, 안절부절 못한 상태에 시달리고 있다. 대화는 나의 이 상태를 녹여줘. 결국에는 그 확신했던 미래가 현실이 됐다! 이럴 때는 어떻게 해야하나? 이런 능력을 보유하고, 그 능력을 힘껏 발휘한 나를 칭찬해야 하나? 이런 글은 부질없다.
+                            <br>
+                            <span class="textbox-date">48.8</span>
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                     <div class="text2">
+                        <div class="work">
+                            <img src="img/IMG_9981.jpeg" alt="점성술사43" width="300" class="glass">
+                        </div>
+                        <div class="textbox">
+                            <br>
+                            (...)<br>
+                            문장과 꺽쇠와 파노라마와 문(그녀).<br>
+                            (...)<br>
+                            <em>D</em>.<br>
+                            창문 틀에 달린 봉에 매달리던 <em>D</em>가 나를 보자마자 천천히 조심스럽게 안긴다. 평소와 다를 바 없는 급식시간이다. 그런데 나는 보통 때와 다르다.<Br>
+                            (...)<br>
+                            <수정페이지><Br>
+                            16p, 23p(캡션 지우기), 37p, 38p, 39p, 41p(뒤집힘), 44p 캡션.
+                            <br>
+                            <span class="textbox-date">47.8</span>
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                    <div class="text2">
+                        <div class="work">
+                            <img src="img/IMG_0561.jpeg" alt="점성술사40" width="300" class="glass">
+                             <img src="img/IMG_0558.jpeg" alt="점성술사41" width="300" class="glass">
+                             <img src="img/IMG_9980.jpg" alt="점성술사42" width="300" class="glass">
+                        </div>
+                        <div class="textbox">
+                            <br>
+                            개학식. 9월부터는 <em>R</em>이나 <em>W</em>을 맡는다.(이때까지 나는 아무것도 알지 못했다.)<Br>
+                            <Br>
+                            <em>D</em>는 나를 보자 울상을 지은 채 (하지만 아련하고 처연하게) 달려와 안긴다. 한껏 어른스러워진 <em>D</em>. 건강하게 잘 지냈니?<Br>
+                            (...)<Br>
+                            어려운 문제였어.<br>
+                            (...)아주 기다란 설명에 아무렴 어떠냐는 심정에, 웃음이 자꾸 나왔다. 어제의 불안과 걱정과 딸리 나는 너무 즐겁고 행복하고...(이때만 해도 나는 알지 못했다.) 조금은 우울하다. (감정이 앞선다는 절망.) 변하지 않는 사실. (감정은 ‘사실’인가?)<br>
+                            “네...”<br>
+                            “아... 왜 이렇게 아프지?”<Br>
+                            “우와, 진짜 멀쩡하다! 왜? 로션이라도 발라줘? (웃음)”<Br>
+                            “네. (씨-익)”<Br>
+                            (...)<Br>
+                            3주 만에 만난 <em>D</em>는 대답을 너무 멋지게 한다. 발음도 분명하다. 마음이 많이 자란 거니?
+                            <br>
+                            <span class="textbox-date">46.8</span>
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                    <div class="text2">
+                        <div class="work">
+                            <img src="img/IMG_9972.jpeg" alt="점성술사37" width="300" class="glass">
+                             <img src="img/IMG_0069.jpeg" alt="점성술사38" width="300" class="glass">
+                             <img src="img/IMG_9982.jpg" alt="점성술사39" width="300" class="glass">
+                        </div>
+                        <div class="textbox">
+                            <br>
+                            나는 지금까지 남의 말을 훔쳐왔다. 도둑놈의 새끼다. 말을 훔치지 않는 나는 지금 글을 쓰지 않는다. (하지만 지금 쓰고 있다.) 글을 쓰지 않는 나는 차분하다. 또는 멍 하다. 생각하지 않는다. 하지 않는다, 않는다, 않는 것뿐. 별 것이 없다.
+                            <br>
+                            새송이 버섯을 세워 횡단으로 가로지르고(횡단하고), 마늘을 종단으로 가로지르고(종단하고),<Br>
+                            로즈마리의 맨끝 여린 잎을 손으로 뜯은 후, 그 끝을 한손으로 잡아 다른 한손을 종단으로 밀어내려 잎을 뜯어내고, 누워있는 페타치즈를 종단으로 길게 가로지르고, 다시 종단으로 큐브모양이 되게끔 가로지른다.
+                            다시, 횡단한 새송이 버섯을 종단으로 여러 번 가로질러 체크무늬를 만든다. (이렇게 자르는 것은 아주 오랜만이다. 한동안 나는 관성으로 대부분의 요리와 식사를 해치웠기 때문이다.)
+                            8시 반? 9시 반? 즈음부터 시작한 식사는 10시 20분이 되어서야 끝이 났다. 입맛이 없고 새송이 버섯은 올리브오일을 머금어 느끼했으며 배가 불러 한 젓가락 들기까지의 간격은 너무나도 멀지만, 또 금방 조급하게 나를 쥐고 흔드는 것 같았다.
+                            페타치즈의 시큼한 맛이 좋다.<Br>
+                            일정한 데시벨이 겹쳐진 소음이 좋다. 자극적인 소리는 이어폰으로만 듣고 싶다.<Br>
+                            멀끔하고 세련된 편한 차림의 중년 여자를 훑어본다. 훑어보다가, 시선을 아래로 내려 빛바랜 카키색의 데님진을 보고 다시 시선을 내려 드러난 발목과 슬리퍼를 신어 드러난 발꿈치까지의 선을 본다. <a href="https://www.instagram.com/p/DbvJkcpEt2j/?img_index=1" target="blank"> 나는 그녀를 떠올린다. 그녀의 잡스러운 회색 단발머리와 그녀의 발목까지 오는 부츠를 떠올린다.</a> (이 다음은 어디에?) 그녀에게 친구가 있을까? 나는 그녀의 친구가 될 수 있을까? 친구가 뭐지. 우울이 뭐였지. 그건 정말로 감정으로 분류되는 것이던가? 친구는 관계인가, 감정인가, 관계와 감정은 관계와 신뢰 그리고 관계와 불신 사이 모두를 포함하는 것인가?
+                            <Br><Br>
+                            (...)
+                            <Br>
+                            <br>
+                            <span class="textbox-date">45.8</span>
+                        </div>
+                    </div>
+                    <br><br><br><br>
                     <div class="text2">
                         <div class="work2">
                             <img src="img/staircasedeploymentview.png" alt="계단실전개도" width="300" class="glass">
