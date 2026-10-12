@@ -5,21 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>self</title>
     <style>
-      body { 
-        font-family: Arial, sans-serif;
-        padding: 40px 10px; 
-      }
+         @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
 
-    h2 {
-      font-size: 15px;
-      color: #999;
-      font-weight: normal;
-      margin: 40px 0 8px 0;
-      letter-spacing: 0.08em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
+        body {
+            font-family: 'Gowun Batang', Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            line-height: 200%;
+            background-color: #878787;
+            padding: 40px 10px; 
+            margin: 200px 20px 20px 50px;
+        }
+        h2 {
+            font-size: 15px;
+            color: #999;
+            font-weight: normal;
+            margin: 40px 0 8px 0;
+            letter-spacing: 0.08em;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
 
+        strong{
+            font-weight: 900;
+            font-style: italic;
+            font-size: 18px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            align-items: center;
+            gap: 20px;
+            min-height: 30px;
+            width: 100%;
+            max-width: 100%;
+            line-height: 1.4;
+            text-align: right;
+            box-sizing: border-box;
+            padding: 20px 10px;
+            background-color: rgb(165 165 165 / 85%);
+            box-shadow: inset 140px 30px 40px #8ec999e1; /* 안쪽 그림자 */
+            /* padding-bottom: env(safe-area-inset-bottom); */
+            z-index: 1200;
+        }
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 30px;
+        }
+        .footer-nav a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .footer-nav a:hover,
+        .footer-nav a:focus-visible {
+            text-decoration: underline;
+            color:#f59a76d4;
+        }
+                @media (max-width: 780px) {
+                    .footer {
+                        align-items: center;
+                        gap: 5px;
+                        font-size: 11px;
+                        padding: 10px 10px;
+                    }
+                    .footer-nav {
+                        gap: 0 12px;
+                    }
+                }
+    
+     ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            list-style: none;
+            width: 400px;
+            /* padding-left: 0; */
+            margin: 0 0 30px auto;
+        }
+        li {
+            display: block;
+            text-align: left;
+            /* background-color: #f59a76d4; */
+            margin-bottom: 10px;
+            padding-right: 14px;
+            padding-left: 14px;
+            /* position: relative; */
+        }
+        li::before {
+            content: "***...";
+            padding-right: 7px;
+            color: #333;
+        }
+        li::after {
+            content: "...***";
+            color: #333;
+            padding-left: 7px;
+        }
+        #instagram-links a {
+            text-decoration: none;
+            font-style: italic;
+            color: #333;
+        }
+        #instagram-links a:hover {
+            color: #8ec999b0;
+            font-weight: 900;
+        }
+   
     .col-fr {
       display: grid;
       grid-template-columns:
@@ -39,18 +137,18 @@
       gap: 2px;
     }
 
-    @media (min-width: 1100px) and (max-width: 1279px) {
-      .col-fr {
-        width: 545px;
-      }
-    }
-
-    @media (min-width: 1280px) {
-      .col-fr {
-        width: min(430px, (100vw - 700px) / 2);
-        max-width: 430px;
-      }
-    }
+                @media (min-width: 1100px) and (max-width: 1279px) {
+                  .col-fr {
+                    width: 545px;
+                  }
+                }
+            
+                @media (min-width: 1280px) {
+                  .col-fr {
+                    width: min(430px, (100vw - 700px) / 2);
+                    max-width: 430px;
+                  }
+                }
 
     .item {
       display: flex;
@@ -91,1171 +189,1191 @@
     }
 
   </style>
+     <ul id="instagram-links">
+        <li style="text-align:right;"><a href="https://www.instagram.com/taep_pokp_?utm_source=qr">@taep_pokp_</a></li>
+        <li style="text-align:right;"><a href="https://www.instagram.com/ohne_seelen?utm_source=qr">@ohne_seelen</a></li>
+    </ul>
 </head>
 <body>
-<h2>
-  『자기소개 Self-introduction』 수신자 목록
-</h2>
-<div class="col-fr">
-  <div class="first-line">
-    no.
-  </div>
-  <div class="first-line">
-    수신자
-  </div>
-  <div class="first-line">
-    물-물
-  </div>
-  <div class="first-line">
-    재발신
-  </div>
-  <div class="first-line">
-    목격자
-  </div>
-  <div class="item">
-    1
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    2
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item" style="font-size: 30px;">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    ∞
-  </div>
-  <div class="item">
-    3
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    4
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    5
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    6
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    7
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    8
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    만화책 2권
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    9
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    10
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    11
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    12
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    13
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    14
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    15
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    16
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    17
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    18
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    19
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    20
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    핸드드립 커피 1잔, 햄버거, 감자튀김
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div >
-  <div class="item">
-    21
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    22
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    23
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    24
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    25
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    26
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    27
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    28
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    29
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    30
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    31
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    32
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    33
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    34
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    35
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    36
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    37
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    38
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    39
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    40
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    41
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    42
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    43
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    44
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    45
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    46
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    47
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    48
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    49
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    50
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    51
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    52
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    53
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    54
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    55
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    56
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    57
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    58
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    59
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    60
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    61
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    62
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    63
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    64
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    65
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    66
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    67
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    68
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    69
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    70
-  </div>
-  <div class="item">
-    <img src="img/boots.png" alt="부츠" width="23px">
-  </div>
-  <div class="item">
-    와인 2잔
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    71
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    72
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    73
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    74
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    75
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    76
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    77
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    78
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    79
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    80
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    81
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    82
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    83
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    84
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    85
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    86
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    87
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    88
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    89
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    90
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    91
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    92
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    93
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    94
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    95
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    96
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    97
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    98
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    99
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-    100
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-  <div class="item" id="last-line">
-    그래 그것을 거기에 비할 수 있을 것 같습니다. 앵클부츠, 지퍼를 절대 올리지 않는 헐렁함으로 연체동물의 힘찬 발차기를 재현하는 육지의 물줄기. 육지의 물줄기가 도달할 그 지점에 있을 것입니다. 머리는 어디에 있나요? 그녀의 머리를 잡고 있는게 나라면 그녀의 발은 무엇을 붙들고 있나요? (38쪽)
-  </div>
-</div>
-<h2>
-</h2>
+        <h2>
+          『자기소개 Self-introduction』 수신자 목록
+        </h2>
+        <div class="col-fr">
+          <div class="first-line">
+            no.
+          </div>
+          <div class="first-line">
+            수신자
+          </div>
+          <div class="first-line">
+            물-물
+          </div>
+          <div class="first-line">
+            재발신
+          </div>
+          <div class="first-line">
+            목격자
+          </div>
+          <div class="item">
+            1
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            2
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item" style="font-size: 30px;">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            ∞
+          </div>
+          <div class="item">
+            3
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            4
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            5
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            6
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            7
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            8
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            만화책 2권
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            9
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            10
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            11
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            12
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            13
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            14
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            15
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            16
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            17
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            18
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            19
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            20
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            핸드드립 커피 1잔, 햄버거, 감자튀김
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div >
+          <div class="item">
+            21
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            22
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            23
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            24
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            25
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            26
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            27
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            28
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            29
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            30
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            31
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            32
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            33
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            34
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            35
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            36
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            37
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            38
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            39
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            40
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            41
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            42
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            43
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            44
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            45
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            46
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            47
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            48
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            49
+          </div>
+          <div class="item">
+               <img src="img/boots.png" alt="부츠" width="23px">
+               <img src="img/boots.png" alt="부츠" width="23px">
+               <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            50
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            51
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            52
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            53
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            54
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            55
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            56
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            57
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            58
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            59
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            60
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            61
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            62
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            63
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            64
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            65
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            66
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            67
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            68
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            69
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            70
+          </div>
+          <div class="item">
+            <img src="img/boots.png" alt="부츠" width="23px">
+          </div>
+          <div class="item">
+            와인 2잔
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            71
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            72
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            73
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            74
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            75
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            76
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            77
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            78
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            79
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            80
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            81
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            82
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            83
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            84
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            85
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            86
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            87
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            88
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            89
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            90
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            91
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            92
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            93
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            94
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            95
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            96
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            97
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            98
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            99
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            100
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item" id="last-line">
+            그래 그것을 거기에 비할 수 있을 것 같습니다. 앵클부츠, 지퍼를 절대 올리지 않는 헐렁함으로 연체동물의 힘찬 발차기를 재현하는 육지의 물줄기. 육지의 물줄기가 도달할 그 지점에 있을 것입니다. 머리는 어디에 있나요? 그녀의 머리를 잡고 있는게 나라면 그녀의 발은 무엇을 붙들고 있나요? (38쪽)
+          </div>
+        </div>
+        <h2>
+        </h2>
+     
 </body>
+<footer class="footer">
+        <nav class="footer-nav" aria-label="Categories">
+            <a href="index.html#astrologer"><br>점성술사</a>
+            <a href="fish.html">등,<br>바닥,<br>배</a>
+            <a href="biography.html#biography"><br>전기</a>
+            <a href="note.html#note"><br>A6</a>
+            <a href="ankle.html#ankle"><br>물물</a>
+        </nav>
+        <br>
+        <div style="font-size: smaller;">© 2026 by Kil Insu. All rights reserved.</div>
+        <br>
+</footer>
 </html>
