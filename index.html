@@ -23,24 +23,23 @@
         }
         .footer {
             position: fixed;
-            left: 0;
             right: 0;
             bottom: 0;
             display: flex;
             flex-direction: row;
-            justify-content: right;
+            justify-content: center;
             align-items: center;
             gap: 20px;
             min-height: 25px;
-            width: 35%;
-            max-width: 90%;
+            width: 40%;
+            max-width: 100%;
             line-height: 1.4;
-            text-align: right;
+            text-align: -webkit-center;
             box-sizing: border-box;
-            padding: 10px;
+            padding: 10px 4px 10px 10px;
             margin: 10px;
             background-color: rgb(165 165 165 / 85%);
-            box-shadow: inset 0 100px 20px 10px #8ec999e1; /* 안쪽 그림자 */
+            box-shadow: inset 100px 20px 10px #8ec999e1; /* 안쪽 그림자 */
             /* padding-bottom: env(safe-area-inset-bottom); */
             z-index: 1200;
         }
@@ -63,7 +62,9 @@
                     align-items: center;
                     gap: 5px;
                     font-size: 10px;
-                    padding: 10px 10px;
+                    padding: 4px;
+                    width: 70%;
+                    max-width: 100%;
                 }
                 .footer-nav {
                     gap: 0 12px;
@@ -1236,14 +1237,14 @@
     </script>
     <footer class="footer">
         <nav class="footer-nav" aria-label="Categories">
-            <a href="index.html#astrologer"><br>점성술사</a>
+            <a href="index.html#astrologer"><br>점성<br>술사</a>
             <a href="fish.html">등,<br>바닥,<br>배</a>
             <a href="biography.html#biography"><br>전기</a>
             <a href="note.html#note"><br>A6</a>
             <a href="ankle.html#ankle"><br>물물</a>
         </nav>
         <br>
-        <div style="font-size: smaller;">© 2026 by Kil Insu.</div>
+        <div style="font-size: smaller;">© 2026<Br>by Kil Insu.</div>
         <br>
     </footer>
 </body>
